@@ -5,7 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
 # getting system properties
 neofetch
 
@@ -34,7 +33,6 @@ antigen use oh-my-zsh
 antigen theme romkatv/powerlevel10k
 
 # Bundles from default repo (oh-my-zsh)
-antigen bundle conda-zsh-completion
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Install and run bundles
