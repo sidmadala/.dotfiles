@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+# Preventing history files from being created
+export LESSHISTFILE=" "
+
+# Setting GOPATH for binary installation
+export GOPATH="$HOME/.go"
+export GOBIN="$HOME/.go/bin"

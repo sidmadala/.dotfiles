@@ -1,0 +1,18 @@
+#!/bin/zsh
+# Aliases for common commands
+
+# List commands 
+alias l='ls -alG'
+alias ll='ls -lG'
+alias lm='l | more'
+
+# Shell traversal commands
+#alias ..='cd ..'
+#alias h='cd'
+setopt autocd
+
+# Program subtitutions 
+alias vim='nvim'
+
+# Duke OIT login commands
+alias oit='ssh -XY smm158@login.oit.duke.edu'
