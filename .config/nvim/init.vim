@@ -3,17 +3,8 @@
 " Setting leader for plugins 
 let mapleader =" "
 
-" auto-install vim-plug                                                                                                                
-if empty(glob('~/.config/nvim/autoload/plug.vim'))                                                                                    
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim                                                             
-  autocmd VimEnter * PlugInstall                                                                                                      
-endif                                                                                                                                 
-
-" Adding NVIM plugins
-call plug#begin('~/.config/nvim/plugged') 
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/fzf.vim'
-call plug#end()
+" Load plugins
+source $HOME/.config/nvim/plugins.vim
 
 " Native NVIM configuration
 set tabstop=4 		 " number of visual space per tab

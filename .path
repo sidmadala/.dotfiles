@@ -1,2 +1,0 @@
-#  Preventing history files from being created
-export LESSHISTFILE=' '
