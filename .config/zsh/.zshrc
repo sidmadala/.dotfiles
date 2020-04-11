@@ -6,7 +6,8 @@ neofetch
 source /usr/local/Cellar/antigen/2.2.3/share/antigen/antigen.zsh
 
 # Load theme
-
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
 
 # Bundles from specied repos (user/repo folder/plugin)
 antigen bundle robbyrussell/oh-my-zsh plugins/vscode
@@ -25,13 +26,11 @@ antigen apply
 # Load custom aliases 
 if [ -s "$HOME/.config/zsh/.alias" ]; then
     source "$HOME/.config/zsh/.alias"
-    # echo 'made aliases'
 fi 
 
 # Load path file 
 if [ -s "$HOME/.config/zsh/.path" ]; then
     source "$HOME/.config/zsh/.path"
-    # echo 'made path'
 fi 
 
 # >>> conda initialize >>>
@@ -49,4 +48,3 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# echo 'initialized shell'
