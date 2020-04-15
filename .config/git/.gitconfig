@@ -1,0 +1,7 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Siddarth Madala
+	email = siddarth.madala@duke.edu
+# Please adapt and uncomment the following lines:
+#	name = Siddarth Madala
+#	email = siddarth.madala@duke.edu
