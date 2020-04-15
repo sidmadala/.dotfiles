@@ -10,7 +10,7 @@ antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
 # Bundles from specied repos (user/repo folder/plugin)
-antigen bundle robbyrussell/oh-my-zsh plugins/vscode
+# antigen bundle robbyrussell/oh-my-zsh plugins/vscode
 antigen bundle esc/conda-zsh-completion
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
