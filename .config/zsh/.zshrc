@@ -9,6 +9,9 @@ source /usr/local/Cellar/antigen/2.2.3/share/antigen/antigen.zsh
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
+# Load zsh prompt line
+# antigen bundle kagamilove0707/moonline.zsh
+
 # Bundles from specied repos (user/repo folder/plugin)
 # antigen bundle robbyrussell/oh-my-zsh plugins/vscode
 antigen bundle esc/conda-zsh-completion

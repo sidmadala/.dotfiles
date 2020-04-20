@@ -6,3 +6,6 @@
 # Setting GOPATH for binary installation
 export GOPATH="$HOME/.config/go"
 export GOBIN="$GOPATH/bin"
+
+# Setting JAVA_HOME for LSPs
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-14.jdk/Contents/Home"

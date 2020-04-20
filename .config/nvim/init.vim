@@ -27,6 +27,8 @@ nnoremap <leader>! :!
 nnoremap <leader>e :e 
 nnoremap <leader>bn :bn<CR>
 nnoremap <leader>tb :tab ball<CR>
+nnoremap <leader>tn :tabn<CR>
+nnoremap <leader>tp :tabp<CR>
 nnoremap <leader>tf :tabfind 
 nnoremap <leader>tc :tabclose<CR>
 noremap % :v%
@@ -46,9 +48,9 @@ Plug 'yggdroot/indentline'  " show line for indented code
 Plug 'jnurmine/zenburn'   " nice theme
 Plug 'scrooloose/nerdtree'  " show file bar on terminal
 Plug 'itchyny/lightline.vim'  " bottom bar for status 
-" Plug 'tpope/vim-surround'
-" Plug 'jiangmiao/auto-pairs'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': ['vim', 'go', ]}
+Plug 'fatih/vim-go'
+Plug 'junegunn/vim-easy-align' " align text in vim
 call plug#end()
 
 " Plugin mapping and config 
@@ -56,17 +58,70 @@ call plug#end()
 " Zenburn colorscheme 
 colors zenburn
 
+" Lightline is a statusbar for vim
+let g:lightline = {'colorscheme': 'wombat'}
+
 " Goyo makes text more readable in center screen
 noremap <leader>g :Goyo<CR>
 
 " Nerdtree eases file navigation
-noremap <leader>n :NERDTreeToggle<CR>
-noremap <leader>nf :NERDTreeFind<CR>
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
+nnoremap <silent> <leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <leader>nf :NERDTreeFind<CR>
+nnoremap <silent> <leader>h :wincmd h<CR>
+nnoremap <silent> <leader>j :wincmd j<CR>
+nnoremap <silent> <leader>k :wincmd k<CR>
+nnoremap <silent> <leader>l :wincmd l<CR>
 
-" Kite is a Python/Go autocomplete module
-" let g:kite_tab_complete=1
+" Vim-go is vim's premier golang plugin
+let g:go_code_completion_enabled = 0
+let g:go_def_mapping_enabled = 0
+nnoremap <leader>gl :GoLint<CR>
 
+" Kite is an autocomplete engine for Python and Golang
+let g:kite_supported_languages = ['python']
+let g:kite_tab_complete=1
+autocmd CompleteDone * if !pumvisible() | pclose | endif " completion window closes after suggestion
+let g:kite_previous_placeholder = '<C-k>'
+let g:kite_next_placeholder = '<C-j>'
+nmap <silent> <buffer> gK <Plug>(kite-docs)
+
+" -------------------------------------------------------------------------------------------------
+" coc.nvim default settings
+" -------------------------------------------------------------------------------------------------
+let g:coc_global_extensions = [ 'coc-marketplace', 'coc-pairs', 'coc-go' ]
+
+" Better display for messages
+set cmdheight=2
+" Smaller updatetime for CursorHold & CursorHoldI
+set updatetime=300
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+" always show signcolumns
+set signcolumn=yes
+
+" Use `gp` and `gn` for navigate diagnostics
+nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>gn <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> <leader>gd <Plug>(coc-definition)
+nmap <silent> <leader>gt <Plug>(coc-type-definition)
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+nmap <silent> <leader>gf <Plug>(coc-references)
+
+" Remap for rename current word
+nmap <leader>lr <Plug>(coc-rename)
+
+" Use K for show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+" autocmd CursorHold * silent call CocActionAsync('highlight')
