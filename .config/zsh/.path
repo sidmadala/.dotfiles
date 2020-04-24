@@ -1,5 +1,9 @@
 #!/bin/zsh
 
+# Place in /etc/zshenv
+# export ZDOTDIR="$HOME/.config/zsh"
+# export ADOTDIR="$HOME/.config/antigen"
+
 # Preventing history files from being created
 # export LESSHISTFILE=" "
 
