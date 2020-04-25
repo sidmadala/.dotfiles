@@ -1,5 +1,5 @@
 # getting system properties
-neofetch
+# neofetch
 
 ############ Antigen Config ############
 # MacOS antigen file
@@ -13,7 +13,6 @@ antigen bundle sindresorhus/pure
 # antigen bundle kagamilove0707/moonline.zsh
 
 # Bundles from specied repos (user/repo folder/plugin)
-# antigen bundle robbyrussell/oh-my-zsh plugins/vscode
 antigen bundle esc/conda-zsh-completion
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
@@ -24,7 +23,7 @@ zstyle ':completion:*' menu select
 
 # Install and run bundles
 antigen apply
-############ Antigen Config ############
+############ End Antigen Config ############
 
 # Load custom aliases 
 if [ -s "$HOME/.config/zsh/.alias" ]; then

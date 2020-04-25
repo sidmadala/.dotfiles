@@ -48,7 +48,7 @@ Plug 'yggdroot/indentline'  " show line for indented code
 Plug 'jnurmine/zenburn'   " nice theme
 Plug 'scrooloose/nerdtree'  " show file bar on terminal
 Plug 'itchyny/lightline.vim'  " bottom bar for status 
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': ['vim', 'go', ]}
+" Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': ['vim', 'go', ]}
 Plug 'fatih/vim-go'
 Plug 'junegunn/vim-easy-align' " align text in vim
 call plug#end()
