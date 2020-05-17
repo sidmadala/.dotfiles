@@ -2,6 +2,7 @@
 
 """""""" Native NVIM configuration """"""""
 let mapleader=" "			" Setting leader for plugins
+
 set tabstop=4				" number of visual space per tab
 set softtabstop=4			" number of spaces in tab
 set shiftwidth=4			" number of spaces to use for each step of (auto)indent
@@ -14,7 +15,6 @@ set incsearch				" search as characters are entered
 set hlsearch				" highlight matches
 set ignorecase				" ignore case on search
 set hidden					" prevent buffers from closing when switching files
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " disable auto comments 
 
 " Keymappings for common commands
 nnoremap <leader>wq :wq<CR>
@@ -30,7 +30,6 @@ nnoremap <leader>tn :tabNext<CR>
 nnoremap <leader>tp :tabp<CR>
 nnoremap <leader>tf :tabfind 
 nnoremap <leader>tc :tabclose<CR>
-noremap % :v%
 
 """""""" Manage NVIM Plugins """"""""
 
@@ -42,14 +41,17 @@ endif
 
 " Adding NVIM plugins
 call plug#begin('~/.config/nvim/plugged') 
-Plug 'junegunn/goyo.vim'		" center text for writing
-Plug 'junegunn/fzf'				" find files in system
-Plug 'yggdroot/indentline'		" show line for indented code
-Plug 'jnurmine/zenburn'			" nice theme
-Plug 'scrooloose/nerdtree'		" show file bar on terminal
-Plug 'itchyny/lightline.vim'	" bottom bar for status 
-Plug 'junegunn/vim-easy-align'	" align text in vim
-Plug 'jiangmiao/auto-pairs'		" auto close brackets 
+Plug 'junegunn/goyo.vim'				" center text for writing
+Plug 'yggdroot/indentline'				" show line for indented code
+Plug 'jnurmine/zenburn'					" nice theme
+Plug 'scrooloose/nerdtree'				" show file bar on terminal
+Plug 'itchyny/lightline.vim'			" bottom bar for status 
+Plug 'junegunn/vim-easy-align'			" align text in vim
+Plug 'jiangmiao/auto-pairs'				" auto close brackets 
+Plug 'liuchengxu/vista.vim'				" display ctags in window
+Plug 'junegunn/fzf'						" find files in system
+Plug 'junegunn/fzf.vim'					" fzf wrapper for vim
+Plug 'tpope/vim-commentary'				" comment text easily
 call plug#end()
 
 """Plugin Configuration"""
@@ -71,9 +73,14 @@ nnoremap <silent> <leader>j :wincmd j<CR>
 nnoremap <silent> <leader>k :wincmd k<CR>
 nnoremap <silent> <leader>l :wincmd l<CR>
 
-" Semantic Highlighting for languages
-"let s:semanticGUIColors = []
-"let g:semanticBlacklistOverride=0
+" FZF is a fuzzy finder system
+nnoremap <silent> <leader>ff :FZF<CR> 
 
-" Language Server setup
+" Vista is a ctag navigator
+nnoremap <silent> <leader>v :Vista!!<CR>
+nnoremap <leader>vf :Vista finder
 
+" Commentary is an autocommenter for vim
+" gcc - comment line
+" visual gc - comment block
+" autocmd FileType apache setlocal commentstring=#\ %s  " add file types 

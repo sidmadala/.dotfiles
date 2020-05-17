@@ -50,3 +50,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export CONDARC="~/.conda/.condarc"
+export GIT_EDITOR=nvim
