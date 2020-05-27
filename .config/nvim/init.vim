@@ -18,7 +18,7 @@ set hidden					" prevent buffers from closing when switching files
 
 " Keymappings for common commands
 nnoremap <leader>wq :wq<CR>
-nnoremap <leader>q :q!
+noremap <leader>q :q!
 nnoremap <leader>w :w
 nnoremap <leader>s :/
 nnoremap <leader>t :terminal
@@ -41,6 +41,7 @@ endif
 
 " Adding NVIM plugins
 call plug#begin('~/.config/nvim/plugged') 
+Plug 'tpope/vim-fugitive'				" git wrapper for vim
 Plug 'junegunn/goyo.vim'				" center text for writing
 Plug 'yggdroot/indentline'				" show line for indented code
 Plug 'jnurmine/zenburn'					" nice theme
@@ -60,7 +61,16 @@ call plug#end()
 colors zenburn
 
 " Lightline is a statusbar for vim
-let g:lightline = {'colorscheme': 'wombat'}
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 
 " Goyo makes text more readable in center screen
 noremap <leader>g :Goyo<CR>
@@ -75,6 +85,7 @@ nnoremap <silent> <leader>l :wincmd l<CR>
 
 " FZF is a fuzzy finder system
 nnoremap <silent> <leader>ff :FZF<CR> 
+nnoremap <silent> <leader>rg :Rg<CR>
 
 " Vista is a ctag navigator
 nnoremap <silent> <leader>v :Vista!!<CR>
@@ -84,3 +95,8 @@ nnoremap <leader>vf :Vista finder
 " gcc - comment line
 " visual gc - comment block
 " autocmd FileType apache setlocal commentstring=#\ %s  " add file types 
+
+" Fugitive is vim's premier git integration plugin
+" :G - check git status
+" :G commit - stage files for commit 
+" :G push - push files to branch

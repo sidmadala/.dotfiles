@@ -50,5 +50,9 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Load autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
 export CONDARC="~/.conda/.condarc"
 export GIT_EDITOR=nvim
+export TERM=xterm-256color
