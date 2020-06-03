@@ -41,6 +41,9 @@ endif
 
 " Adding NVIM plugins
 call plug#begin('~/.config/nvim/plugged') 
+
+" Visual 
+" 
 Plug 'tpope/vim-fugitive'				" git wrapper for vim
 Plug 'junegunn/goyo.vim'				" center text for writing
 Plug 'yggdroot/indentline'				" show line for indented code
