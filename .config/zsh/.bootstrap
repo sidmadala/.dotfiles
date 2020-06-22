@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-# change where vscode extensions are stored
-code --extensions-dir .config/vscode/extensions

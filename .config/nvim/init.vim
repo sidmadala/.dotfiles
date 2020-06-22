@@ -45,17 +45,17 @@ call plug#begin('~/.config/nvim/plugged')
 " Visual 
 " 
 Plug 'tpope/vim-fugitive'				" git wrapper for vim
-Plug 'junegunn/goyo.vim'				" center text for writing
+Plug 'tpope/vim-commentary'				" comment text easily
 Plug 'yggdroot/indentline'				" show line for indented code
 Plug 'jnurmine/zenburn'					" nice theme
 Plug 'scrooloose/nerdtree'				" show file bar on terminal
 Plug 'itchyny/lightline.vim'			" bottom bar for status 
-Plug 'junegunn/vim-easy-align'			" align text in vim
 Plug 'jiangmiao/auto-pairs'				" auto close brackets 
 Plug 'liuchengxu/vista.vim'				" display ctags in window
 Plug 'junegunn/fzf'						" find files in system
 Plug 'junegunn/fzf.vim'					" fzf wrapper for vim
-Plug 'tpope/vim-commentary'				" comment text easily
+Plug 'junegunn/vim-easy-align'			" align text in vim
+Plug 'junegunn/goyo.vim'				" center text for writing
 call plug#end()
 
 """Plugin Configuration"""
@@ -85,6 +85,7 @@ nnoremap <silent> <leader>h :wincmd h<CR>
 nnoremap <silent> <leader>j :wincmd j<CR>
 nnoremap <silent> <leader>k :wincmd k<CR>
 nnoremap <silent> <leader>l :wincmd l<CR>
+" :m - bring up file editing options 
 
 " FZF is a fuzzy finder system
 nnoremap <silent> <leader>ff :FZF<CR> 
