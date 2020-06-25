@@ -13,6 +13,7 @@ antigen bundle sindresorhus/pure
 # antigen bundle kagamilove0707/moonline.zsh
 
 # Bundles from specied repos (user/repo folder/plugin)
+antigen bundle greymd/docker-zsh-completion
 antigen bundle esc/conda-zsh-completion
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
