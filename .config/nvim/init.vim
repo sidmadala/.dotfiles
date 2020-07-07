@@ -41,9 +41,6 @@ endif
 
 " Adding NVIM plugins
 call plug#begin('~/.config/nvim/plugged') 
-
-" Visual 
-" 
 Plug 'tpope/vim-fugitive'				" git wrapper for vim
 Plug 'tpope/vim-commentary'				" comment text easily
 Plug 'yggdroot/indentline'				" show line for indented code
@@ -56,12 +53,13 @@ Plug 'junegunn/fzf'						" find files in system
 Plug 'junegunn/fzf.vim'					" fzf wrapper for vim
 Plug 'junegunn/vim-easy-align'			" align text in vim
 Plug 'junegunn/goyo.vim'				" center text for writing
+Plug 'vim-python/python-syntax'			" python syntax highlighting
 call plug#end()
 
 """Plugin Configuration"""
 
-" Zenburn colorscheme 
-colors zenburn
+" Setting colorscheme 
+colorscheme zenburn
 
 " Lightline is a statusbar for vim
 let g:lightline = {
@@ -104,3 +102,6 @@ nnoremap <leader>vf :Vista finder
 " :G - check git status
 " :G commit - stage files for commit 
 " :G push - push files to branch
+
+" Python-Syntax is a sytax highlighter for python
+let g:python_highlight_all = 1

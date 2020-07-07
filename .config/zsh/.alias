@@ -6,9 +6,6 @@ alias l='ls -alG'
 alias ll='ls -lG'
 alias lm='l | more'
 
-# Shell traversal commands
-setopt autocd
-
 # Program subtitutions 
 alias vim='nvim'
 alias brewdeps='brew leaves | xargs brew deps --installed --for-each | sed "s/^.*:/$(tput setaf 4)&$(tput sgr0)/"'
