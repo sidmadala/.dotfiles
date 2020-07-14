@@ -54,6 +54,7 @@ Plug 'junegunn/fzf.vim'					" fzf wrapper for vim
 Plug 'junegunn/vim-easy-align'			" align text in vim
 Plug 'junegunn/goyo.vim'				" center text for writing
 Plug 'vim-python/python-syntax'			" python syntax highlighting
+" Plug 'ryanoasis/vim-devicons'			" pretty dev icons in nerdtree
 call plug#end()
 
 """Plugin Configuration"""

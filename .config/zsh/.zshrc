@@ -1,5 +1,5 @@
 # getting system properties
-zmodload zsh/zprof
+# zmodload zsh/zprof
 
 ############ Antigen Config ############
 # MacOS antigen file
@@ -36,15 +36,10 @@ setopt autopushd		# treat dirs like stack
 setopt pushdignoredups	# ignore dir stack dups 
 
 export BAT_THEME=zenburn	# setting bat theme for file expansion
+
 # Load autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-# Optimize compinit calls to check cache once a day
-# autoload -Uz compinit
-# for dump in ~/.zcompdump(N.mh+24); do
-#   compinit
-# done
-# compinit -C
 ############ End zsh settings ############
 
 # Load custom aliases 
