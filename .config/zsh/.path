@@ -5,7 +5,7 @@
 # export ADOTDIR="$HOME/.config/antigen"
 
 # Preventing history files from being created
-# export LESSHISTFILE=" "
+export LESSHISTFILE=" "
 
 # Setting GOPATH for binary installation
 export GOPATH="$HOME/.config/go"
