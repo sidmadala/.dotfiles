@@ -15,6 +15,7 @@ set incsearch				" search as characters are entered
 set hlsearch				" highlight matches
 set ignorecase				" ignore case on search
 set hidden					" prevent buffers from closing when switching files
+set showtabline=2			" always show tabs 
 
 " Keymappings for common commands
 nnoremap <leader>wq :wq<CR>
@@ -53,12 +54,20 @@ Plug 'junegunn/fzf'						" find files in system
 Plug 'junegunn/fzf.vim'					" fzf wrapper for vim
 Plug 'junegunn/vim-easy-align'			" align text in vim
 Plug 'junegunn/goyo.vim'				" center text for writing
+Plug 'junegunn/seoul256.vim'			" another nice theme
 Plug 'vim-python/python-syntax'			" python syntax highlighting
+Plug 'ryanoasis/vim-devicons'			" icons for vim
 call plug#end()
 
 """Plugin Configuration"""
 
 " Setting colorscheme 
+" seoul256 (dark):
+"   Range:   233 (darkest) ~ 239 (lightest)
+"   Default: 237
+" let g:seoul256_background = 233
+" let g:seoul256_srgb = 1
+" colo seoul256
 colorscheme zenburn
 
 " Lightline is a statusbar for vim
