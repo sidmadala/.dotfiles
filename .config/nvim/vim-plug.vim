@@ -13,15 +13,23 @@ Plug 'tpope/vim-commentary'				" comment text easily
 Plug 'yggdroot/indentline'				" show line for indented code
 Plug 'jnurmine/zenburn'					" nice theme
 Plug 'scrooloose/nerdtree'				" show file bar on terminal
-Plug 'itchyny/lightline.vim'				" bottom bar for status 
+Plug 'itchyny/lightline.vim'			" bottom bar for status 
 Plug 'jiangmiao/auto-pairs'				" auto close brackets 
-" Plug 'liuchengxu/vista.vim'				" display ctags in window
-Plug 'junegunn/fzf'					" find files in system
+Plug 'junegunn/fzf'						" find files in system
 Plug 'junegunn/fzf.vim'					" fzf wrapper for vim
-Plug 'junegunn/vim-easy-align'				" align text in vim
+Plug 'junegunn/vim-easy-align'			" align text in vim
 Plug 'junegunn/goyo.vim'				" center text for writing
-Plug 'junegunn/seoul256.vim'				" another nice theme
-Plug 'vim-python/python-syntax'				" python syntax highlighting
-Plug 'ryanoasis/vim-devicons'				" icons for vim
+Plug 'junegunn/seoul256.vim'			" another nice theme
+Plug 'vim-python/python-syntax'			" python syntax highlighting
+Plug 'ryanoasis/vim-devicons'			" icons for vim
 Plug 'majutsushi/tagbar'				" ctag viewer for vim
+Plug 'rust-lang/rust.vim'				" rust features for vim
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
+Plug 'neovim/nvim-lsp'					" native lsp client for neovim
 call plug#end()
+
+
+
