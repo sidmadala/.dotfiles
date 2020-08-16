@@ -29,6 +29,3 @@ Plug 'nvim-lua/completion-nvim'			" auto completion framework
 Plug 'nvim-lua/diagnostic-nvim'			" better error displays for lsp
 Plug 'nvim-treesitter/nvim-treesitter'	" better syntax highlighting for neovim
 call plug#end()
-
-
-
