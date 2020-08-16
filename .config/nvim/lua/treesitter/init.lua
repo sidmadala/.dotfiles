@@ -3,6 +3,6 @@
 -- Setting highlight parsing
 require'nvim-treesitter.configs'.setup {
     highlight = {
-      enable = true                   -- false will disable the whole extension
+      enable = true		-- false will disable the whole extension
     }
 }
