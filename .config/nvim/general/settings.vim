@@ -14,3 +14,5 @@ set hlsearch				" highlight matches
 set ignorecase				" ignore case on search
 set hidden				" prevent buffers from closing when switching files
 set showtabline=2			" always show tabs 
+set wrap
+set linebreak				" break at end of word for line wrap
