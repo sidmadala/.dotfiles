@@ -24,11 +24,8 @@ Plug 'vim-python/python-syntax'			" python syntax highlighting
 Plug 'ryanoasis/vim-devicons'			" icons for vim
 Plug 'majutsushi/tagbar'				" ctag viewer for vim
 Plug 'rust-lang/rust.vim'				" rust features for vim
-" Plug 'autozimu/LanguageClient-neovim', {
-"     \ 'branch': 'next',
-"     \ 'do': 'bash install.sh',
-"     \ }
 Plug 'neovim/nvim-lsp'					" native lsp client for neovim
+Plug 'nvim-lua/completion-nvim'			" auto completion framework
 call plug#end()
 
 
