@@ -10,6 +10,7 @@ export LESSHISTFILE=" "
 # Setting GOPATH for binary installation
 export GOPATH="$HOME/.config/go"
 export GOBIN="$GOPATH/bin"
+export PATH=$PATH:$GOBIN
 
 # Setting JAVA_HOME 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-14.jdk/Contents/Home"
