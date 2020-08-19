@@ -16,8 +16,8 @@ export PATH=$PATH:$GOBIN
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-14.jdk/Contents/Home"
 
 # Setting rustup and cargo paths
-export RUSTUP_HOME="$HOME/.config/rustup"
-export CARGO_HOME="$HOME/.config/cargo"
+export RUSTUP_HOME="$HOME/.config/rust/rustup"
+export CARGO_HOME="$HOME/.config/rust/cargo"
 export CARGO_BIN="$CARGO_HOME/bin"
 export PATH=$CARGO_BIN:$PATH
 
