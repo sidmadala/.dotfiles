@@ -8,24 +8,29 @@ endif
 
 " Adding NVIM plugins
 call plug#begin('~/.config/nvim/plugged') 
+
+" Display Settings
+Plug 'jnurmine/zenburn'					" nice theme
+Plug 'itchyny/lightline.vim'			" bottom bar for status 
+Plug 'yggdroot/indentline'				" show line for indented code
+Plug 'junegunn/goyo.vim'				" center text for writing
+Plug 'ryanoasis/vim-devicons'			" icons for vim
+
+" Utilities
 Plug 'tpope/vim-fugitive'				" git wrapper for vim
 Plug 'tpope/vim-commentary'				" comment text easily
-Plug 'yggdroot/indentline'				" show line for indented code
-Plug 'jnurmine/zenburn'					" nice theme
 Plug 'scrooloose/nerdtree'				" show file bar on terminal
-Plug 'itchyny/lightline.vim'			" bottom bar for status 
-Plug 'jiangmiao/auto-pairs'				" auto close brackets 
+Plug 'cohama/lexima.vim'				" auto close brackets 
 Plug 'junegunn/fzf'						" find files in system
 Plug 'junegunn/fzf.vim'					" fzf wrapper for vim
 Plug 'junegunn/vim-easy-align'			" align text in vim
-Plug 'junegunn/goyo.vim'				" center text for writing
-Plug 'junegunn/seoul256.vim'			" another nice theme
-Plug 'vim-python/python-syntax'			" python syntax highlighting
-Plug 'ryanoasis/vim-devicons'			" icons for vim
-Plug 'liuchengxu/vista.vim'				" tag/lsp viewer for vim
-Plug 'rust-lang/rust.vim'				" rust features for vim
+
+" LSP Support
 Plug 'neovim/nvim-lsp'					" native lsp settings for neovim
 Plug 'nvim-lua/completion-nvim'			" auto completion framework
 Plug 'nvim-lua/diagnostic-nvim'			" better error displays for lsp
 Plug 'nvim-treesitter/nvim-treesitter'	" better syntax highlighting for neovim
+Plug 'liuchengxu/vista.vim'				" tag/lsp viewer for vim
+Plug 'rust-lang/rust.vim'				" rust features for vim
+
 call plug#end()
