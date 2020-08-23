@@ -22,8 +22,9 @@ local on_attach = function(client, bufnr)
 end
 
 -- LSPs I use
-local servers = {'gopls', 'tsserver', 'pyls', 'rust_analyzer'}
+local servers = {'gopls', 'tsserver', 'pyls', 'rust_analyzer', 'texlab'} 
 
+-- Attaching LSP and running setup commands
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,

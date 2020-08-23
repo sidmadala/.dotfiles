@@ -12,3 +12,4 @@ alias brewdeps='brew leaves | xargs brew deps --installed --for-each | sed "s/^.
 
 # Duke OIT login commands
 alias oit='ssh -XY smm158@login.oit.duke.edu'
+alias vcm='ssh -XY vcm@vcm-15991.vm.duke.edu'
