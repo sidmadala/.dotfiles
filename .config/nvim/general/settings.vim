@@ -17,4 +17,6 @@ set showtabline=2			" always show tabs
 set wrap
 set linebreak				" break at end of word for line wrap
 set mouse=nv				" allowing mouse support in normal/visual modes
+set signcolumn=number		" add column for errors/linting
+set cmdheight=2				" sets height of command bar below
 

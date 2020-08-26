@@ -11,3 +11,7 @@ source $HOME/.config/nvim/themes/zenburn.vim
 for f in split(glob('$HOME/.config/nvim/plug-config/*.vim'), '\n')
     exe 'source' f
 endfor
+
+" Displaying startup menu
+" intro
+" set laststatus=1
