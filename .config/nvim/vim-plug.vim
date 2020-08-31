@@ -15,6 +15,7 @@ Plug 'itchyny/lightline.vim'			" bottom bar for status
 Plug 'yggdroot/indentline'				" show line for indented code
 Plug 'junegunn/goyo.vim'				" center text for writing
 Plug 'ryanoasis/vim-devicons'			" icons for vim
+Plug 'liuchengxu/vim-which-key'			" display keymaps 
 
 " Utilities
 Plug 'tpope/vim-fugitive'				" git wrapper for vim
@@ -24,6 +25,8 @@ Plug 'cohama/lexima.vim'				" auto close brackets
 Plug 'junegunn/fzf'						" find files in system
 Plug 'junegunn/fzf.vim'					" fzf wrapper for vim
 Plug 'junegunn/vim-easy-align'			" align text in vim
+Plug 'lervag/vimtex'					" latex support in vim
+" Plug 'SirVer/ultisnips'					" snippets for vim
 
 " LSP Support
 Plug 'neovim/nvim-lsp'					" native lsp settings for neovim

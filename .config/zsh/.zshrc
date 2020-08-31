@@ -14,8 +14,8 @@ antigen bundle sindresorhus/pure
 
 # Bundles from specied repos (user/repo folder/plugin)
 antigen bundle greymd/docker-zsh-completion
-antigen bundle esc/conda-zsh-completion
 antigen bundle nnao45/zsh-kubectl-completion
+antigen bundle esc/conda-zsh-completion
 
 # zsh specific bundles
 antigen bundle zsh-users/zsh-completions
