@@ -12,10 +12,11 @@ antigen bundle sindresorhus/pure
 # Load zsh prompt line
 # antigen bundle kagamilove0707/moonline.zsh
 
-# Bundles from specied repos (user/repo folder/plugin)
+# Bundles from specified repos (user/repo folder/plugin)
 antigen bundle greymd/docker-zsh-completion
 antigen bundle nnao45/zsh-kubectl-completion
 antigen bundle esc/conda-zsh-completion
+antigen bundle ryutok/rust-zsh-completions
 
 # zsh specific bundles
 antigen bundle zsh-users/zsh-completions
