@@ -7,13 +7,13 @@
 # Preventing history files from being created
 export LESSHISTFILE=" "
 
-# Setting GOPATH for binary installation
+# Setting GOPATH 
 export GOPATH="$HOME/.config/go"
 export GOBIN="$GOPATH/bin"
 export PATH=$PATH:$GOBIN
 
 # Setting JAVA_HOME 
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-14.jdk/Contents/Home"
+export JAVA_HOME="/usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home"
 
 # Setting rustup and cargo paths
 export RUSTUP_HOME="$HOME/.config/rust/rustup"
@@ -21,3 +21,9 @@ export CARGO_HOME="$HOME/.config/rust/cargo"
 export CARGO_BIN="$CARGO_HOME/bin"
 export PATH=$CARGO_BIN:$PATH
 
+# if type brew &>/dev/null; then
+#   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+#   autoload -Uz compinit
+#   compinit
+# fi

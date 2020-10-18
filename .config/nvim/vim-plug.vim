@@ -15,7 +15,7 @@ Plug 'itchyny/lightline.vim'			" bottom bar for status
 Plug 'yggdroot/indentline'				" show line for indented code
 Plug 'junegunn/goyo.vim'				" center text for writing
 Plug 'ryanoasis/vim-devicons'			" icons for vim
-Plug 'liuchengxu/vim-which-key'			" display keymaps 
+" Plug 'liuchengxu/vim-which-key'			" display keymaps 
 
 " Utilities
 Plug 'tpope/vim-fugitive'				" git wrapper for vim

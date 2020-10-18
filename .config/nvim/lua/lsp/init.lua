@@ -22,7 +22,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- LSPs I use
-local servers = {'gopls', 'tsserver', 'pyls', 'rust_analyzer', 'texlab'} 
+local servers = {'gopls', 'tsserver', 'pyls', 'rust_analyzer', 'texlab', 'sumneko_lua'} 
 
 -- Attaching LSP and running setup commands
 for _, lsp in ipairs(servers) do

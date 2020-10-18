@@ -6,10 +6,11 @@ alias l='ls -alG'
 alias ll='ls -lG'
 alias lm='l | more'
 
-# Program subtitutions 
+# Program substitutions 
 alias vim='nvim'
+alias lua='luajit'
 alias brewdeps='brew leaves | xargs brew deps --installed --for-each | sed "s/^.*:/$(tput setaf 4)&$(tput sgr0)/"'
-alias cleanup='brew cleanup --prune 0 && conda clean -a'
+alias cleanup='brew cleanup --prune 0 && conda clean -a && docker system prune -a'
 
 # Duke OIT login commands
 alias oit='ssh -XY smm158@login.oit.duke.edu'

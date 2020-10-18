@@ -20,7 +20,7 @@ set mouse=nv				" allowing mouse support in normal/visual modes
 set signcolumn=number		" add column for errors/linting
 set cmdheight=2				" sets height of command bar below
 set timeoutlen=500			" setting timeout
-set spell					" setting spellcheck
+" set spell					" setting spellcheck
 
 " Prevent repeated line commenting 
 autocmd VimEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
