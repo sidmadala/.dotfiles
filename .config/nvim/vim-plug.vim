@@ -11,6 +11,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Display Settings
 Plug 'jnurmine/zenburn'					" nice theme
+Plug 'NLKNguyen/papercolor-theme'		" another nice theme
 Plug 'itchyny/lightline.vim'			" bottom bar for status 
 Plug 'yggdroot/indentline'				" show line for indented code
 Plug 'junegunn/goyo.vim'				" center text for writing

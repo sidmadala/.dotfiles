@@ -20,6 +20,10 @@ set mouse=nv				" allowing mouse support in normal/visual modes
 set signcolumn=number		" add column for errors/linting
 set cmdheight=2				" sets height of command bar below
 set timeoutlen=500			" setting timeout
+set breakindent				" enable indentation
+" ident by an additional 2 characters on wrapped lines, when line >= 40 characters, put 'showbreak' at start of line
+set breakindentopt=shift:2,min:40,sbr
+set showbreak=>>			" append '>>' to indent
 " set spell					" setting spellcheck
 
 " Prevent repeated line commenting 
