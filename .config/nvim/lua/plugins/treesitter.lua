@@ -1,4 +1,4 @@
--- Treesitter config 
+-- Treesitter config
 
 -- Setting highlight parsing
 require'nvim-treesitter.configs'.setup {

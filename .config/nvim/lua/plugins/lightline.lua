@@ -1,0 +1,1 @@
+-- Status bar for neovim

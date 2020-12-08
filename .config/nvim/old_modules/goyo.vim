@@ -13,7 +13,7 @@ function! s:goyo_leave()
 	set showmode
  	set showcmd
  	set scrolloff=5
-	set nonumber norelativenumber
+	set number relativenumber
 	" call lightline#disable()
 endfunction
 

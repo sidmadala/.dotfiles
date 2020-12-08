@@ -1,7 +1,7 @@
 -- LSP setup for nvim
 local diagnostic = require('diagnostic')
 local completion = require('completion')
-local nvim_lsp = require('nvim_lsp')
+-- local nvim_lsp = require('lspconfig')
 
 local on_attach = function(client, bufnr)
   diagnostic.on_attach(client, bufnr)
@@ -22,11 +22,13 @@ local on_attach = function(client, bufnr)
 end
 
 -- LSPs I use
-local servers = {'gopls', 'tsserver', 'pyls', 'rust_analyzer', 'texlab', 'sumneko_lua'} 
+local servers = {'gopls', 'tsserver', 'pyls', 'rust_analyzer', 'texlab'} 
 
 -- Attaching LSP and running setup commands
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
+  nvim_lsp.lsp.setup {
     on_attach = on_attach,
   }
 end
+
+-- require'lspconfig'.sumneko_lua.setup{}
