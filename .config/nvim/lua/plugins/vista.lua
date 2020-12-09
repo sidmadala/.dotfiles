@@ -14,7 +14,7 @@ end
 
 -- Executive used when opening vista sidebar without specifying it.
 -- See all the avaliable executives via `:echo g:vista#executives`.
--- vim.g.vista_default_executive = "nvim_lsp"
+vim.g.vista_default_executive = "nvim_lsp"
 
 -- Ensure you have installed some decent font to show these pretty symbols, then you can enable icon for the kind.
 vim.cmd [[ let g:vista#renderer#enable_icon=1 ]]

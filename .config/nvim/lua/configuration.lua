@@ -73,6 +73,7 @@ cmd [[set showtabline=2]]			-- always show tabs
 win.wrap = true 
 win.linebreak = true					-- break at end of word for line wrap
 cmd [[set mouse=nv]]					-- allowing mouse support in normal/visal modes
+-- cmd [[set ttymouse=sgr]]				-- alacritty mouse support
 cmd [[set signcolumn=number]]			-- add column for errors/linting
 opt.cmdheight = 2						-- sets height of command bar below
 global.timeoutlen = 500					-- setting timeout

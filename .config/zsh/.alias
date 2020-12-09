@@ -4,14 +4,15 @@
 # List commands 
 alias l='ls -alG'
 alias ll='ls -lG'
-alias lm='l | more'
+alias lm='ls -alG | more'
 
 # Program substitutions 
 alias vim='nvim'
 alias lua='luajit'
+alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
 alias brewdeps='brew leaves | xargs brew deps --installed --for-each | sed "s/^.*:/$(tput setaf 4)&$(tput sgr0)/"'
 alias cleanup='brew cleanup --prune 0 && conda clean -a && docker system prune -a'
 
 # Duke OIT login commands
 alias oit='ssh -XY smm158@login.oit.duke.edu'
-alias vcm='ssh -XY vcm@vcm-15991.vm.duke.edu'
+# alias vcm='ssh -XY vcm@vcm-15991.vm.duke.edu'
