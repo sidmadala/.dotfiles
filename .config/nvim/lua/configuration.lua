@@ -58,6 +58,8 @@ global.ignorecase = true			-- ignore case on search
 -- Formatting
 win.breakindent = true				-- enable indentation
 win.conceallevel = 0				-- display all text normally
+win.wrap = true 
+win.linebreak = true					-- break at end of word for line wrap
 -- indent by an additional 2 characters on wrapped lines, when line >= 40 characters, put 'showbreak' at start of line
 cmd [[set breakindentopt=shift:2,min:40,sbr]] 
 global.showbreak = string.rep(" ", 3)	-- append '>>' to indent
@@ -70,14 +72,11 @@ global.showcmd = true				-- show command in bottom bar
 global.showmatch = false			-- no highlight matching braces
 global.hidden = true				-- prevent buffers from closing when switching files
 cmd [[set showtabline=2]]			-- always show tabs 
-win.wrap = true 
-win.linebreak = true					-- break at end of word for line wrap
-cmd [[set mouse=nv]]					-- allowing mouse support in normal/visal modes
--- cmd [[set ttymouse=sgr]]				-- alacritty mouse support
-cmd [[set signcolumn=number]]			-- add column for errors/linting
-opt.cmdheight = 2						-- sets height of command bar below
-global.timeoutlen = 500					-- setting timeout
-global.updatetime = 300					-- shorter update times
+opt.mouse = 'a'						-- allowing mouse support in normal/visal modes
+cmd [[set signcolumn=yes]]			-- add column for errors/linting
+opt.cmdheight = 2					-- sets height of command bar below
+global.timeoutlen = 500				-- setting timeout
+global.updatetime = 300				-- shorter update times
 
 -- set spell							-- setting spellcheck
 

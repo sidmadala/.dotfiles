@@ -129,10 +129,11 @@ local override_config = {
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(diagnostic.on_publish_diagnostics, override_config)
 
-vim.cmd [[ call sign_define("LspDiagnosticsErrorSign", {"text" : "✗", "texthl" : "LspDiagnosticsError"}) ]]
-vim.cmd [[ call sign_define("LspDiagnosticsWarningSign", {"text" : "B", "texthl" : "LspDiagnosticsWarning"}) ]]
-vim.cmd [[ call sign_define("LspDiagnosticsInformationSign", {"text" : "I", "texthl" : "LspDiagnosticsInformation"}) ]]
-vim.cmd [[ call sign_define("LspDiagnosticsHintSign", {"text" : "?", "texthl" : "LspDiagnosticsHint"}) ]]
+-- vim.call(sign_define, "LspDiagnosticsErrorSign", {"text" : "✗", "texthl" : "LspDiagnosticsError"})
+-- [[ call sign_define("LspDiagnosticsErrorSign", {"text" : "✗", "texthl" : "LspDiagnosticsError"}) ]]
+-- vim.cmd [[ call sign_define("LspDiagnosticsWarningSign", {"text" : "B", "texthl" : "LspDiagnosticsWarning"}) ]]
+-- vim.cmd [[ call sign_define("LspDiagnosticsInformationSign", {"text" : "I", "texthl" : "LspDiagnosticsInformation"}) ]]
+-- vim.cmd [[ call sign_define("LspDiagnosticsHintSign", {"text" : "?", "texthl" : "LspDiagnosticsHint"}) ]]
 
 -- Completion
 vim.cmd [[ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>" ]]	-- Use <Tab> to navigate down popup menu
@@ -140,5 +141,5 @@ vim.cmd [[ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>" ]]	-- Us
 -- let g:completion_enable_auto_paren = 1									-- Complete parentheses for functions
 -- vim.opt.completeopt = { "menuone" , "noinsert", "noselect" }				-- Set completeopt to have a better completion experience
 vim.cmd [[ set completeopt=menuone,noinsert,noselect ]]
-vim.cmd [[ set shortmess+=c ]]												-- Avoid showing message extra message when using completion
+vim.cmd [[ set shortmess+=c ]]												-- Avoid showing extra message when using completion
 
