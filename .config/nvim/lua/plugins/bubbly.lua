@@ -1,5 +1,6 @@
 -- Statusline for Neovim
 
+-- return function()
 vim.g.bubbly_palette = {
    background = "#34343c",
    foreground = "#c5cdd9",
@@ -14,3 +15,4 @@ vim.g.bubbly_palette = {
    lightgrey = "#57595e",
    darkgrey = "#404247",
 }
+-- end
