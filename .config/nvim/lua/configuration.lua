@@ -39,45 +39,59 @@ vimp.nnoremap({"silent"}, "<leader>l", ":wincmd l<cr>")
 -- Settings
 
 -- Line numbers
-win.relativenumber = true 
+win.relativenumber = true
 win.number = true
 win.cursorline = true
+opt.scrolloff = 5
+opt.sidescrolloff = 5
 
 -- Tabs
+opt.tabstop = 4
 buf.tabstop = 4
+opt.softtabstop = 4
 buf.softtabstop = 4
+opt.shiftwidth = 4
 buf.shiftwidth = 4
-buf.autoindent = true 
+opt.autoindent = true
+opt.expandtab = true
+buf.expandtab = true
+
+-- Splits
+opt.splitright = true
+opt.splitbelow = true
 
 -- Search
-global.incsearch = true				-- search as characters are entered
-global.hlsearch = true				-- highlight matches
-global.ignorecase = true			-- ignore case on search
+global.incsearch = true			-- search as characters are entered
+opt.hlsearch = true				-- highlight matches
+opt.ignorecase = true			-- ignore case on search
 
+-- Buffers
+opt.hidden = true
+opt.updatetime = 300				-- shorter update times
+opt.timeoutlen = 500				-- setting timeout
+opt.cmdheight = 2					-- sets height of command bar below
+win.signcolumn = "yes"  	        -- add column for errors/linting
+global.showcmd = true				-- show command in bottom bar
+global.showmatch = false			-- no highlight matching braces
+opt.mouse = "a"						-- allowing mouse support in all modes
+opt.showtabline = 2                 -- show tabs
+opt.termguicolors = true            -- setting colors for terminal gui
+
+-- Dropdowns
+opt.completeopt = "menuone,noinsert,noselect"     -- Set completeopt to have a better completion experience
+opt.shortmess = vim.o.shortmess .. 'c'
 
 -- Formatting
 win.breakindent = true				-- enable indentation
 win.conceallevel = 0				-- display all text normally
-win.wrap = true 
+win.wrap = true
 win.linebreak = true					-- break at end of word for line wrap
 -- indent by an additional 2 characters on wrapped lines, when line >= 40 characters, put 'showbreak' at start of line
-cmd [[set breakindentopt=shift:2,min:40,sbr]] 
-global.showbreak = string.rep(" ", 3)	-- append '>>' to indent
+cmd [[set breakindentopt=shift:2,min:40,sbr]]
+global.showbreak = string.rep(" ", 3)	-- append '   ' to indent
 
--- " Prevent repeated line commenting 
+-- Prevent repeated line commenting
 cmd [[autocmd VimEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions-=u]]
 
 -- Extra
-global.showcmd = true				-- show command in bottom bar
-global.showmatch = false			-- no highlight matching braces
-global.hidden = true				-- prevent buffers from closing when switching files
-cmd [[set showtabline=2]]			-- always show tabs 
-opt.mouse = 'a'						-- allowing mouse support in normal/visal modes
-cmd [[set signcolumn=yes]]			-- add column for errors/linting
-opt.cmdheight = 2					-- sets height of command bar below
-global.timeoutlen = 500				-- setting timeout
-global.updatetime = 300				-- shorter update times
-
 -- set spell							-- setting spellcheck
-
-cmd [[set termguicolors]]				-- setting colors for terminal gui

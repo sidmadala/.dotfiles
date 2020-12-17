@@ -27,9 +27,9 @@ require("packer").startup(function()
 	use {"neovim/nvim-lspconfig", config = 'require("plugins.lsp_config")'}
 	use {"nvim-lua/completion-nvim"}
 	use {"nvim-treesitter/nvim-treesitter", config = 'require("plugins.treesitter")'}
-	use { "ojroques/nvim-lspfuzzy", config = 'require("plugins.lspfuzzy")'} 
+	use {"ojroques/nvim-lspfuzzy", config = 'require("plugins.lspfuzzy")'}
 	use {"liuchengxu/vista.vim", config = 'require("plugins.vista")'}
-	use {"rust-lang/rust.vim"}
+	use {"rust-lang/rust.vim", config = 'require("plugins.rust")'}
 
 	-- Utilities
 	use {"tpope/vim-commentary"}
@@ -40,4 +40,5 @@ require("packer").startup(function()
 	use {"tpope/vim-fugitive", config = 'require("plugins.fugitive")'}
 	use {"tpope/vim-surround"}
 	use {"christoomey/vim-tmux-navigator"}
+
 end)

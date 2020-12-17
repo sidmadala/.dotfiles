@@ -23,7 +23,7 @@ local custom_attach = function()
 	vimp.nnoremap({"silent"}, "gr", "<cmd>lua vim.lsp.buf.references()<cr>")
 	vimp.nnoremap({"silent"}, "gR", "<cmd>lua vim.lsp.buf.rename()<cr>")
 	vimp.nnoremap({"silent"}, "gD", "<cmd>lua vim.lsp.buf.implementation()<cr>")
-	vimp.nnoremap({"silent"}, "gk", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
+	vimp.nnoremap({"silent"}, "gK", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
 	vimp.nnoremap({"silent"}, "1gd", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
 	vimp.nnoremap({"silent"}, "g0", "<cmd>lua vim.lsp.buf.document_symbol()<cr>")
 	vimp.nnoremap({"silent"}, "gW", "<cmd>lua vim.lsp.buf.workspace_symbol()<cr>")
@@ -103,8 +103,8 @@ lspconfig.texlab.setup{
 
 local override_config = {
 
-	-- Enable underline, use default values
-	underline = true,
+	-- Disable underline
+	underline = false,
 
 	-- Enable virtual text, override spacing to 4
 	virtual_text = {
@@ -126,7 +126,6 @@ local override_config = {
 
 }
 
-
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(diagnostic.on_publish_diagnostics, override_config)
 
 -- vim.call(sign_define, "LspDiagnosticsErrorSign", {"text" : "✗", "texthl" : "LspDiagnosticsError"})
@@ -139,7 +138,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(diagnostic.on
 vim.cmd [[ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>" ]]	-- Use <Tab> to navigate down popup menu
 vim.cmd [[ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>" ]]	-- Use <S-Tab> to navigate up popup menu
 -- let g:completion_enable_auto_paren = 1									-- Complete parentheses for functions
--- vim.opt.completeopt = { "menuone" , "noinsert", "noselect" }				-- Set completeopt to have a better completion experience
-vim.cmd [[ set completeopt=menuone,noinsert,noselect ]]
-vim.cmd [[ set shortmess+=c ]]												-- Avoid showing extra message when using completion
 
+-- vim.cmd [[ set shortmess+=c ]]												-- Avoid showing extra message when using completion
+vim.cmd [[hi markdownError guifg=None guibg=None]]
