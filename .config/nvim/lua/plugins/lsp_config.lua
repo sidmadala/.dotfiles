@@ -12,10 +12,10 @@ local util = require("lspconfig.util")
 
 -- Functions
 
-local custom_attach = function()
+local custom_attach = function(client)
 
 	-- Attaching completion to buffer
-	completion.on_attach()
+	completion.on_attach(client)
 
 	-- Keymaps
 	vimp.nnoremap({"silent"}, "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
@@ -23,10 +23,23 @@ local custom_attach = function()
 	vimp.nnoremap({"silent"}, "gr", "<cmd>lua vim.lsp.buf.references()<cr>")
 	vimp.nnoremap({"silent"}, "gR", "<cmd>lua vim.lsp.buf.rename()<cr>")
 	vimp.nnoremap({"silent"}, "gD", "<cmd>lua vim.lsp.buf.implementation()<cr>")
-	vimp.nnoremap({"silent"}, "gK", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
+	vimp.nnoremap({"silent"}, "K", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
 	vimp.nnoremap({"silent"}, "1gd", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
 	vimp.nnoremap({"silent"}, "g0", "<cmd>lua vim.lsp.buf.document_symbol()<cr>")
 	vimp.nnoremap({"silent"}, "gW", "<cmd>lua vim.lsp.buf.workspace_symbol()<cr>")
+    vimp.nnoremap({"silent"}, "gK", "<cmd>lua vim.lsp.buf.code_action()<cr>")
+
+    -- Getting filetype of buffer
+    local filetype = vim.api.nvim_buf_get_option(0, 'filetype')
+
+    -- Rust is currently the only LSP w/ inlay hints
+    -- if filetype == 'rust' then
+    -- vim.cmd(
+    --   [[autocmd BufEnter,BufWritePost <buffer> :lua require('lsp_extensions.inlay_hints').request { ]]
+    --     .. [[aligned = true, prefix = " » " ]]
+    --   .. [[} ]]
+    -- )
+    -- end
 
 	print("LSP Attached")
 end
@@ -108,8 +121,8 @@ local override_config = {
 
 	-- Enable virtual text, override spacing to 4
 	virtual_text = {
-	  spacing = 10,
-	  prefix = "->"
+	  spacing = 5,
+	  prefix = "»"
 	},
 
 	-- Use a function to dynamically turn signs off
@@ -129,15 +142,13 @@ local override_config = {
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(diagnostic.on_publish_diagnostics, override_config)
 
 -- vim.call(sign_define, "LspDiagnosticsErrorSign", {"text" : "✗", "texthl" : "LspDiagnosticsError"})
--- [[ call sign_define("LspDiagnosticsErrorSign", {"text" : "✗", "texthl" : "LspDiagnosticsError"}) ]]
--- vim.cmd [[ call sign_define("LspDiagnosticsWarningSign", {"text" : "B", "texthl" : "LspDiagnosticsWarning"}) ]]
--- vim.cmd [[ call sign_define("LspDiagnosticsInformationSign", {"text" : "I", "texthl" : "LspDiagnosticsInformation"}) ]]
--- vim.cmd [[ call sign_define("LspDiagnosticsHintSign", {"text" : "?", "texthl" : "LspDiagnosticsHint"}) ]]
+vim.cmd [[ call sign_define("LspDiagnosticsErrorSign", {"text" : "✗", "texthl" : "LspDiagnosticsError"}) ]]
+vim.cmd [[ call sign_define("LspDiagnosticsWarningSign", {"text" : "B", "texthl" : "LspDiagnosticsWarning"}) ]]
+vim.cmd [[ call sign_define("LspDiagnosticsInformationSign", {"text" : "I", "texthl" : "LspDiagnosticsInformation"}) ]]
+vim.cmd [[ call sign_define("LspDiagnosticsHintSign", {"text" : "?", "texthl" : "LspDiagnosticsHint"}) ]]
 
 -- Completion
-vim.cmd [[ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>" ]]	-- Use <Tab> to navigate down popup menu
+vim.cmd [[ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>" ]]	-- Use <Tab> to navigate down popup menu
 vim.cmd [[ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>" ]]	-- Use <S-Tab> to navigate up popup menu
--- let g:completion_enable_auto_paren = 1									-- Complete parentheses for functions
-
--- vim.cmd [[ set shortmess+=c ]]												-- Avoid showing extra message when using completion
+-- vim.g.completion_enable_auto_paren = 1			-- Complete parentheses for functions
 vim.cmd [[hi markdownError guifg=None guibg=None]]

@@ -156,14 +156,14 @@ require("plugins.fugitive")
 require("plugins.vimtex")
 -- Config for: zenburn
 require("plugins.colorscheme")
--- Config for: nvim-lspconfig
-require("plugins.lsp_config")
 -- Config for: goyo.vim
 require("plugins.goyo")
 -- Config for: lightline.vim
 require("plugins.lightline")
 -- Config for: vista.vim
 require("plugins.vista")
+-- Config for: nvim-lspconfig
+require("plugins.lsp_config")
 -- Conditional loads
 -- Load plugins in order defined by `after`
 END

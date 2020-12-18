@@ -1,6 +1,6 @@
 -- Goyo makes text more readable in center screen
 
-if not pcall(require, '../vimp') then
+if not pcall(require, 'vimp') then
   vim.cmd [[ echom 'Cannot load `vimp`' ]]
 end
 

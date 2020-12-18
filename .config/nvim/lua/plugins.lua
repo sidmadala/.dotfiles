@@ -30,6 +30,8 @@ require("packer").startup(function()
 	use {"ojroques/nvim-lspfuzzy", config = 'require("plugins.lspfuzzy")'}
 	use {"liuchengxu/vista.vim", config = 'require("plugins.vista")'}
 	use {"rust-lang/rust.vim", config = 'require("plugins.rust")'}
+    use {"nvim-telescope/telescope.nvim", requires = {"nvim-lua/plenary.nvim", "nvim-lua/popup.nvim"}, config = 'require("plugins.telescope")', disable = true}
+
 
 	-- Utilities
 	use {"tpope/vim-commentary"}
