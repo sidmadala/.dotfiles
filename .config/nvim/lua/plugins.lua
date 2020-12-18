@@ -4,8 +4,9 @@ Packer plugin configuration
 
 -- Only required if you have packer in your `opt` pack
 vim.cmd [[packadd packer.nvim]]
+
 -- Automatically compile lazy loaders
--- vim.cmd [[ autocmd BufWritePost plugins.lua PackerCompile ]]
+vim.cmd [[ autocmd BufWritePost plugins.lua PackerCompile ]]
 
 require("packer").startup(function()
 
@@ -17,7 +18,7 @@ require("packer").startup(function()
 	use {"jnurmine/zenburn", config = 'require("plugins.colorscheme")'}
 	use {"aonemd/kuroi.vim", config = require("plugins.colorscheme"), disable = true}
 	use {"itchyny/lightline.vim", config = 'require("plugins.lightline")'}
-	use {"datwaft/bubbly.nvim", config = require("plugins.bubbly"), disable = true}
+	use {"datwaft/bubbly.nvim", config = 'require("plugins.bubbly")', disable = true}
 	use {"Yggdroot/indentLine", config = 'require("plugins.indentline")'}
 	use {"lukas-reineke/indent-blankline.nvim", disable = true}
 	use {"junegunn/goyo.vim", config = 'require("plugins.goyo")'}
@@ -42,5 +43,5 @@ require("packer").startup(function()
 	use {"tpope/vim-fugitive", config = 'require("plugins.fugitive")'}
 	use {"tpope/vim-surround"}
 	use {"christoomey/vim-tmux-navigator"}
-
+    use {"tweekmonster/startuptime.vim"}
 end)

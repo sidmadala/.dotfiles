@@ -75,6 +75,8 @@ lspconfig.sumneko_lua.setup({
             "after_each",
             "teardown",
             "pending",
+            "vimp",
+            "use"
           },
         },
         completion = {keywordSnippet = "Disable"},
@@ -103,6 +105,11 @@ lspconfig.gopls.setup{
 -- Rust
 lspconfig.rust_analyzer.setup{
 	on_attach = custom_attach
+}
+
+-- C/Cpp
+lspconfig.clangd.setup{
+    on_attach = custom_attach
 }
 
 -- Latex
