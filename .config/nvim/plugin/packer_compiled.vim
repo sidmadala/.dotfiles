@@ -138,32 +138,32 @@ end
 
 -- Pre-load configuration
 -- Post-load configuration
--- Config for: rust.vim
-require("plugins.rust")
--- Config for: nvim-lspfuzzy
-require("plugins.lspfuzzy")
--- Config for: nvim-tree.lua
-require("plugins.tree")
--- Config for: indentLine
-require("plugins.indentline")
--- Config for: fzf.vim
-require("plugins.fzf")
--- Config for: nvim-treesitter
-require("plugins.treesitter")
--- Config for: vim-fugitive
-require("plugins.fugitive")
 -- Config for: vimtex
 require("plugins.vimtex")
--- Config for: zenburn
-require("plugins.colorscheme")
--- Config for: goyo.vim
-require("plugins.goyo")
--- Config for: lightline.vim
-require("plugins.lightline")
 -- Config for: vista.vim
 require("plugins.vista")
+-- Config for: lightline.vim
+require("plugins.lightline")
+-- Config for: zenburn
+require("plugins.colorscheme")
+-- Config for: nvim-tree.lua
+require("plugins.tree")
+-- Config for: vim-fugitive
+require("plugins.fugitive")
+-- Config for: nvim-treesitter
+require("plugins.treesitter")
+-- Config for: goyo.vim
+require("plugins.goyo")
+-- Config for: indentLine
+require("plugins.indentline")
 -- Config for: nvim-lspconfig
 require("plugins.lsp_config")
+-- Config for: nvim-lspfuzzy
+require("plugins.lspfuzzy")
+-- Config for: fzf.vim
+require("plugins.fzf")
+-- Config for: rust.vim
+require("plugins.rust")
 -- Conditional loads
 -- Load plugins in order defined by `after`
 END

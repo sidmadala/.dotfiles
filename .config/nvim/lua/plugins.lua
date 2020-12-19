@@ -2,6 +2,16 @@
 Packer plugin configuration
 --]]
 
+-- Install Packer.nvim if not on machine
+local execute = vim.api.nvim_command
+local fn = vim.fn
+local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
+
+if fn.empty(fn.glob(install_path)) > 0 then
+	execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
+    execute 'packadd packer.nvim'
+end
+
 -- Only required if you have packer in your `opt` pack
 vim.cmd [[packadd packer.nvim]]
 
@@ -16,7 +26,7 @@ require("packer").startup(function()
 
 	-- Aesthetic
 	use {"jnurmine/zenburn", config = 'require("plugins.colorscheme")'}
-	use {"aonemd/kuroi.vim", config = require("plugins.colorscheme"), disable = true}
+	use {"aonemd/kuroi.vim", config = 'require("plugins.colorscheme")', disable = true}
 	use {"itchyny/lightline.vim", config = 'require("plugins.lightline")'}
 	use {"datwaft/bubbly.nvim", config = 'require("plugins.bubbly")', disable = true}
 	use {"Yggdroot/indentLine", config = 'require("plugins.indentline")'}
