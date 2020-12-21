@@ -19,6 +19,10 @@ export SHELDON_CONFIG_DIR="$XDG_CONFIG_HOME/sheldon"
 # export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 
+# Setting z.lua history path
+export _ZL_DATA="$XDG_DATA_HOME/zlua/.zlua"
+export _ZL_ECHO=1
+
 # Setting AWS-cli config path
 export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
 export AWS_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"

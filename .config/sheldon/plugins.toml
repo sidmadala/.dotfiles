@@ -22,11 +22,6 @@ defer = { value = 'zsh-defer source "{{ file }}"', each = true }
 [plugins]
 
 
-[plugins.autojump]
-github = "wting/autojump"
-dir = "bin"
-apply = ["PATH", "source"]
-
 # Non-deferred plugins 
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
@@ -54,6 +49,10 @@ use = ["{{ name }}.zsh"]
 
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
+
+[plugins."z.lua"]
+github = 'skywind3000/z.lua'
+apply = ["source"]
 
 [plugins.compinit]
 inline = 'autoload -Uz compinit && zsh-defer compinit'

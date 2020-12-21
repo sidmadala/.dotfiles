@@ -11,6 +11,8 @@ alias vim='nvim'
 alias lua='luajit'
 alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
 alias brewdeps='brew leaves | xargs brew deps --installed --for-each | sed "s/^.*:/$(tput setaf 4)&$(tput sgr0)/"'
+alias j='_zlua'
+alias jh='_zlua -I -t .'
 alias cleanup='brew cleanup --prune 0 && conda clean -a && docker system prune -a'
 
 # Duke OIT login commands
