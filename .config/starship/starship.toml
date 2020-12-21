@@ -4,3 +4,6 @@ style_root = "black bold"
 format = "[$user]($style) in "
 disabled = false
 show_always = true
+
+[aws]
+disabled = true

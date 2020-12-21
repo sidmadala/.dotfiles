@@ -9,12 +9,22 @@ export LESSHISTFILE=" "
 
 # Setting config location
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
 
 # Setting sheldon config path
-export SHELDON_CONFIG_DIR="$HOME/.config/sheldon"
+# export SHELDON_CONFIG_DIR="$HOME/.config/sheldon"
+export SHELDON_CONFIG_DIR="$XDG_CONFIG_HOME/sheldon"
 
 # Setting starship config path
-export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+# export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+
+# Setting AWS-cli config path
+export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
+export AWS_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
+export AWS_CLI_HISTORY_FILE="$XDG_DATA_HOME/aws/history"
+export AWS_SHARED_CREDENTIALS_FILE="$XDG_DATA_HOME/aws/shared-credentials"
+# export AWS_WEB_IDENTITY_TOKEN_FILE="$XDG_DATA_HOME/aws/token"
 
 # Setting GOPATH 
 export GOPATH="$HOME/.config/go"
@@ -29,3 +39,5 @@ export RUSTUP_HOME="$HOME/.config/rust/rustup"
 export CARGO_HOME="$HOME/.config/rust/cargo"
 export CARGO_BIN="$CARGO_HOME/bin"
 export PATH=$CARGO_BIN:$PATH
+
+
