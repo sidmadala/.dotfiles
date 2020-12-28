@@ -153,9 +153,3 @@ vim.cmd [[ call sign_define("LspDiagnosticsErrorSign", {"text" : "✗", "texthl"
 vim.cmd [[ call sign_define("LspDiagnosticsWarningSign", {"text" : "B", "texthl" : "LspDiagnosticsWarning"}) ]]
 vim.cmd [[ call sign_define("LspDiagnosticsInformationSign", {"text" : "I", "texthl" : "LspDiagnosticsInformation"}) ]]
 vim.cmd [[ call sign_define("LspDiagnosticsHintSign", {"text" : "?", "texthl" : "LspDiagnosticsHint"}) ]]
-
--- Completion
-vim.cmd [[ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>" ]]	-- Use <Tab> to navigate down popup menu
-vim.cmd [[ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>" ]]	-- Use <S-Tab> to navigate up popup menu
--- vim.g.completion_enable_auto_paren = 1			-- Complete parentheses for functions
-vim.cmd [[hi markdownError guifg=None guibg=None]]

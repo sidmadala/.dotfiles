@@ -26,7 +26,7 @@ require("packer").startup(function()
 
 	-- Aesthetic
 	use {"jnurmine/zenburn", config = 'require("plugins.colorscheme")'}
-	use {"aonemd/kuroi.vim", config = 'require("plugins.colorscheme")', disable = true}
+	use {"aonemd/kuroi.vim", config = 'require("plugins.colorscheme")'}
 	use {"itchyny/lightline.vim", config = 'require("plugins.lightline")'}
 	use {"datwaft/bubbly.nvim", config = 'require("plugins.bubbly")', disable = true}
 	use {"Yggdroot/indentLine", config = 'require("plugins.indentline")'}
@@ -36,7 +36,7 @@ require("packer").startup(function()
 
 	-- LSP
 	use {"neovim/nvim-lspconfig", config = 'require("plugins.lsp_config")'}
-	use {"nvim-lua/completion-nvim"}
+	use {"nvim-lua/completion-nvim", config = 'require("plugins.completion")'}
 	use {"nvim-treesitter/nvim-treesitter", config = 'require("plugins.treesitter")'}
 	use {"ojroques/nvim-lspfuzzy", config = 'require("plugins.lspfuzzy")'}
 	use {"liuchengxu/vista.vim", config = 'require("plugins.vista")'}
@@ -45,6 +45,7 @@ require("packer").startup(function()
 
 
 	-- Utilities
+    use {"SirVer/ultisnips", requires = "honza/vim-snippets", config = 'require("plugins.ultisnips")'}
 	use {"tpope/vim-commentary"}
 	use {"jiangmiao/auto-pairs"}
 	use {"junegunn/fzf.vim", requires = "junegunn/fzf", config = 'require("plugins.fzf")'}
