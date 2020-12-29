@@ -10,6 +10,7 @@ export LESSHISTFILE=" "
 # Setting config location
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
 
 # Setting sheldon config path
 # export SHELDON_CONFIG_DIR="$HOME/.config/sheldon"
@@ -44,4 +45,7 @@ export CARGO_HOME="$XDG_CONFIG_HOME/rust/cargo"
 export CARGO_BIN="$CARGO_HOME/bin"
 export PATH=$PATH:$CARGO_BIN
 
-
+# Setting npm paths
+export FNM_DIR="$XDG_CACHE_HOME/fnm"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"

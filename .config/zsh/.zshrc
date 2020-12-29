@@ -31,11 +31,25 @@ export GIT_EDITOR=nvim
 export TERM=xterm-256color
 export MANPAGER="nvim -c 'set ft=man' -"
 
+# fnm source
+if [[ -x "/usr/local/Cellar/fnm" ]]; then
+    OLDPATH="$PATH"
+    eval "$(fnm env)"
+    PATH="$OLDPATH:$FNM_MULTISHELL_PATH/bin"
+fi
+
 # starship prompt
 eval "$(starship init zsh)"
 
 # sheldon source
 source <(sheldon source)
+
+# Prevent tmux from duplicating path
+# if [[ -z $TMUX ]]; then
+#   echo "Inside TMUX"
+#   PATH="$PATH:/foo"
+# fi
+
 
 # profiling zsh
 # zprof

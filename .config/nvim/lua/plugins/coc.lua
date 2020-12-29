@@ -17,3 +17,13 @@ vim.cmd [[ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>" ]]
 
 -- Use <CR> for confirming completion
 vim.cmd [[ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>" ]]
+
+
+-- Coc FZF
+
+vimp.nnoremap({"silent"}, "<leader>a", ":<C-u>CocFzfList diagnostics<CR>")
+vimp.nnoremap({"silent"}, "<leader>s", ":<C-u>CocFzfList diagnostics --current-buf<CR>")
+vimp.nnoremap({"silent"}, "<leader>e", ":<C-u>CocFzfList extensions<CR>")
+
+
+
