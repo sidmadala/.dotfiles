@@ -33,7 +33,7 @@ export AWS_SHARED_CREDENTIALS_FILE="$XDG_DATA_HOME/aws/shared-credentials"
 # Setting GOPATH 
 export GOPATH="$XDG_CONFIG_HOME/go"
 export GOBIN="$GOPATH/bin"
-# export PATH=$PATH:$GOBIN
+export PATH=$PATH:$GOBIN
 
 # Setting JAVA_HOME 
 export JAVA_HOME="/usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home"
@@ -42,6 +42,6 @@ export JAVA_HOME="/usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home"
 export RUSTUP_HOME="$XDG_CONFIG_HOME/rust/rustup"
 export CARGO_HOME="$XDG_CONFIG_HOME/rust/cargo"
 export CARGO_BIN="$CARGO_HOME/bin"
-# export PATH=$CARGO_BIN:$PATH
+export PATH=$PATH:$CARGO_BIN
 
 

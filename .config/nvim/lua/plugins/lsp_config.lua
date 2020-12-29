@@ -14,8 +14,9 @@ local util = require("lspconfig.util")
 
 local custom_attach = function(client)
 
+    -- CURRENTLY ATTACHING TO EVERY BUFFER
 	-- Attaching completion to buffer
-	completion.on_attach(client)
+	-- completion.on_attach(client) 
 
 	-- Keymaps
 	vimp.nnoremap({"silent"}, "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
@@ -30,7 +31,7 @@ local custom_attach = function(client)
     vimp.nnoremap({"silent"}, "gK", "<cmd>lua vim.lsp.buf.code_action()<cr>")
 
     -- Getting filetype of buffer
-    local filetype = vim.api.nvim_buf_get_option(0, 'filetype')
+    -- local filetype = vim.api.nvim_buf_get_option(0, 'filetype')
 
     -- Rust is currently the only LSP w/ inlay hints
     -- if filetype == 'rust' then

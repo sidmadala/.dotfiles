@@ -27,6 +27,7 @@ require("packer").startup(function()
 	-- Aesthetic
 	use {"jnurmine/zenburn", config = 'require("plugins.colorscheme")'}
 	use {"aonemd/kuroi.vim", config = 'require("plugins.colorscheme")'}
+    use {"morhetz/gruvbox", config = 'require("plugins.colorscheme")'}
 	use {"itchyny/lightline.vim", config = 'require("plugins.lightline")'}
 	use {"datwaft/bubbly.nvim", config = 'require("plugins.bubbly")', disable = true}
 	use {"Yggdroot/indentLine", config = 'require("plugins.indentline")'}
