@@ -36,17 +36,21 @@ require("packer").startup(function()
 	use {"kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons", config = 'require("plugins.tree")'}
 
 	-- LSP
-	use {"neovim/nvim-lspconfig", config = 'require("plugins.lsp_config")'}
-	use {"nvim-lua/completion-nvim", config = 'require("plugins.completion")'}
+    use {"neoclide/coc.nvim", branch = "release", run = "yarn install --frozen-lockfile", config = 'require("plugins.coc")'}
 	use {"nvim-treesitter/nvim-treesitter", config = 'require("plugins.treesitter")'}
-	use {"ojroques/nvim-lspfuzzy", config = 'require("plugins.lspfuzzy")'}
 	use {"liuchengxu/vista.vim", config = 'require("plugins.vista")'}
 	use {"rust-lang/rust.vim", config = 'require("plugins.rust")'}
+
+	use {"neovim/nvim-lspconfig", config = 'require("plugins.lsp_config")', disable = true}
+	-- use {"nvim-lua/completion-nvim", config = 'require("plugins.completion")', disable, true}
+	use {"ojroques/nvim-lspfuzzy", config = 'require("plugins.lspfuzzy")', disable = true}
     use {"nvim-telescope/telescope.nvim", requires = {"nvim-lua/plenary.nvim", "nvim-lua/popup.nvim"}, config = 'require("plugins.telescope")', disable = true}
 
 
 	-- Utilities
-    use {"SirVer/ultisnips", requires = "honza/vim-snippets", config = 'require("plugins.ultisnips")'}
+    use {"SirVer/ultisnips", config = 'require("plugins.ultisnips")', disable = true}
+
+    use {"honza/vim-snippets"}
 	use {"tpope/vim-commentary"}
 	use {"jiangmiao/auto-pairs"}
 	use {"junegunn/fzf.vim", requires = "junegunn/fzf", config = 'require("plugins.fzf")'}

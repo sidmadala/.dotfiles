@@ -67,7 +67,9 @@ opt.ignorecase = true			-- ignore case on search
 
 -- Buffers
 opt.hidden = true
-opt.updatetime = 300				-- shorter update times
+opt.backup = false
+opt.writebackup = false
+opt.updatetime = 100				-- shorter update times
 opt.timeoutlen = 500				-- setting timeout
 opt.cmdheight = 2					-- sets height of command bar below
 win.signcolumn = "yes"  	        -- add column for errors/linting
