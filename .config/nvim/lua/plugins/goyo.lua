@@ -6,13 +6,13 @@ end
 
 vimp.nnoremap("<leader>g", ":Goyo<cr>")
 
---function! s:goyo_enter()
---	set noshowmode
---	set noshowcmd
---	set scrolloff=999
---	set number relativenumber	" show relative line numbers  
---	" call lightline#enable()
---endfunction
+-- function! s:goyo_enter()
+-- 	set noshowmode
+-- 	set noshowcmd
+-- 	set scrolloff=999
+-- 	set number relativenumber	" show relative line numbers  
+-- 	" call lightline#enable()
+-- endfunction
 
 --function! s:goyo_leave()
 --	set showmode
@@ -24,3 +24,5 @@ vimp.nnoremap("<leader>g", ":Goyo<cr>")
 
 --autocmd! User GoyoEnter nested call <SID>goyo_enter()
 --autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+

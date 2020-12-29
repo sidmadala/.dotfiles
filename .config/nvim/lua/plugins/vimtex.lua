@@ -10,3 +10,4 @@ vim.g.vimtex_compiler_latexrun = 1
 -- Setting concealment level
 -- vim.cmd [[let g:tex_conceal='']]
 vim.g.tex_conceal = ""
+vim.g.vimtex_syntax_conceal_default = 0
