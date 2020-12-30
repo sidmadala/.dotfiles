@@ -138,34 +138,34 @@ end
 
 -- Pre-load configuration
 -- Post-load configuration
--- Config for: vimtex
-require("plugins.vimtex")
 -- Config for: vim-fugitive
 require("plugins.fugitive")
--- Config for: vista.vim
-require("plugins.vista")
--- Config for: zenburn
-require("plugins.colorscheme")
--- Config for: gruvbox
-require("plugins.colorscheme")
--- Config for: lightline.vim
-require("plugins.lightline")
 -- Config for: nvim-treesitter
 require("plugins.treesitter")
--- Config for: kuroi.vim
+-- Config for: zenburn
 require("plugins.colorscheme")
--- Config for: goyo.vim
-require("plugins.goyo")
+-- Config for: vista.vim
+require("plugins.vista")
 -- Config for: nvim-tree.lua
 require("plugins.tree")
--- Config for: coc.nvim
-require("plugins.coc")
--- Config for: fzf.vim
-require("plugins.fzf")
+-- Config for: lightline.vim
+require("plugins.lightline")
 -- Config for: rust.vim
 require("plugins.rust")
+-- Config for: gruvbox
+require("plugins.colorscheme")
 -- Config for: indentLine
 require("plugins.indentline")
+-- Config for: fzf.vim
+require("plugins.fzf")
+-- Config for: goyo.vim
+require("plugins.goyo")
+-- Config for: coc.nvim
+require("plugins.coc")
+-- Config for: kuroi.vim
+require("plugins.colorscheme")
+-- Config for: vimtex
+require("plugins.vimtex")
 -- Conditional loads
 -- Load plugins in order defined by `after`
 END

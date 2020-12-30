@@ -38,7 +38,6 @@ require("packer").startup(function()
 	-- LSP
     use {"neoclide/coc.nvim", branch = "release", run = "yarn install --frozen-lockfile", config = 'require("plugins.coc")'}
     use {"antoinemadec/coc-fzf", branch = "release"}
-
 	use {"nvim-treesitter/nvim-treesitter", config = 'require("plugins.treesitter")'}
 	use {"liuchengxu/vista.vim", config = 'require("plugins.vista")'}
 	use {"rust-lang/rust.vim", config = 'require("plugins.rust")'}

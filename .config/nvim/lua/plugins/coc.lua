@@ -9,6 +9,9 @@ vimp.nmap({"silent"}, "gd", "<Plug>(coc-definition)")
 vimp.nmap({"silent"}, "gh", "<Plug>(coc-type-definition)")
 vimp.nmap({"silent"}, "gi", "<Plug>(coc-implemenation)")
 vimp.nmap({"silent"}, "gr", "<Plug>(coc-references)")
+vimp.nmap({"silent"}, "gR", "<Plug>(coc-rename)")
+vimp.nnoremap({"silent"}, "K", ":call <SID>show_documentation()<CR>")
+
 -- vimp.inoremap({"silent"}, "<expr> <c-space>", "coc#refresh()")
 
 -- Use <Tab> and <S-Tab> to navigate the completion list:
