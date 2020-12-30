@@ -1,6 +1,11 @@
 # getting system properties
 # zmodload zsh/zprof
 
+# Exit if in tmux session
+# if [[ -n $TMUX ]]; then
+#     exit
+# fi
+
 ############ zsh settings ############
 bindkey -v				# vi keybindings
 setopt autocd			# auto change dirs by name
@@ -32,7 +37,7 @@ export TERM=xterm-256color
 export MANPAGER="nvim -c 'set ft=man' -"
 
 # fnm source
-if [[ -x "/usr/local/Cellar/fnm" ]]; then
+if [ -x "/usr/local/Cellar/fnm" ] && [ -z $TMUX ]; then
     OLDPATH="$PATH"
     eval "$(fnm env)"
     PATH="$OLDPATH:$FNM_MULTISHELL_PATH/bin"
@@ -44,11 +49,8 @@ eval "$(starship init zsh)"
 # sheldon source
 source <(sheldon source)
 
-# Prevent tmux from duplicating path
-# if [[ -z $TMUX ]]; then
-#   echo "Inside TMUX"
-#   PATH="$PATH:/foo"
-# fi
+# Removing duplicates from path
+typeset -aU path
 
 
 # profiling zsh
