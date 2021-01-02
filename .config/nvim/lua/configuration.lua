@@ -31,10 +31,10 @@ vimp.nnoremap("<leader>tn", ":tabNext<cr>")
 vimp.nnoremap("<leader>tp", ":tabp<cr>")
 vimp.nnoremap("<leader>tf", ":tabfind")
 vimp.nnoremap("<leader>tc", ":tabclose<cr>")
-vimp.nnoremap({"silent"}, "<leader>h", ":wincmd h<cr>")
-vimp.nnoremap({"silent"}, "<leader>j", ":wincmd j<cr>")
-vimp.nnoremap({"silent"}, "<leader>k", ":wincmd k<cr>")
-vimp.nnoremap({"silent"}, "<leader>l", ":wincmd l<cr>")
+-- vimp.nnoremap({"silent"}, "<leader>h", ":wincmd h<cr>")
+-- vimp.nnoremap({"silent"}, "<leader>j", ":wincmd j<cr>")
+-- vimp.nnoremap({"silent"}, "<leader>k", ":wincmd k<cr>")
+-- vimp.nnoremap({"silent"}, "<leader>l", ":wincmd l<cr>")
 
 -- Settings
 

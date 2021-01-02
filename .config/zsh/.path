@@ -49,3 +49,7 @@ export PATH=$PATH:$CARGO_BIN
 export FNM_DIR="$XDG_CACHE_HOME/fnm"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+
+# Lazygit config path
+# export LAZYGIT_NEW_DIR_FILE="$XDG_CONFIG_HOME/lazygit"
+

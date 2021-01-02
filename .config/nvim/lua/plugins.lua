@@ -29,9 +29,7 @@ require("packer").startup(function()
 	use {"aonemd/kuroi.vim", config = 'require("plugins.colorscheme")'}
     use {"morhetz/gruvbox", config = 'require("plugins.colorscheme")'}
 	use {"itchyny/lightline.vim", config = 'require("plugins.lightline")'}
-	use {"datwaft/bubbly.nvim", config = 'require("plugins.bubbly")', disable = true}
 	use {"Yggdroot/indentLine", config = 'require("plugins.indentline")'}
-	use {"lukas-reineke/indent-blankline.nvim", disable = true}
 	use {"junegunn/goyo.vim", config = 'require("plugins.goyo")'}
 	use {"kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons", config = 'require("plugins.tree")'}
 
@@ -42,15 +40,14 @@ require("packer").startup(function()
 	use {"liuchengxu/vista.vim", config = 'require("plugins.vista")'}
 	use {"rust-lang/rust.vim", config = 'require("plugins.rust")'}
 
-	use {"neovim/nvim-lspconfig", config = 'require("plugins.lsp_config")', disable = true}
+	-- use {"neovim/nvim-lspconfig", config = 'require("plugins.lsp_config")', disable = true}
 	-- use {"nvim-lua/completion-nvim", config = 'require("plugins.completion")', disable, true}
-	use {"ojroques/nvim-lspfuzzy", config = 'require("plugins.lspfuzzy")', disable = true}
-    use {"nvim-telescope/telescope.nvim", requires = {"nvim-lua/plenary.nvim", "nvim-lua/popup.nvim"}, config = 'require("plugins.telescope")', disable = true}
+	-- use {"ojroques/nvim-lspfuzzy", config = 'require("plugins.lspfuzzy")', disable = true}
+    -- use {"nvim-telescope/telescope.nvim", requires = {"nvim-lua/plenary.nvim", "nvim-lua/popup.nvim"}, config = 'require("plugins.telescope")', disable = true}
 
 
 	-- Utilities
     use {"SirVer/ultisnips", config = 'require("plugins.ultisnips")', disable = true}
-
     use {"honza/vim-snippets"}
 	use {"tpope/vim-commentary"}
 	use {"jiangmiao/auto-pairs"}
@@ -60,5 +57,7 @@ require("packer").startup(function()
 	use {"tpope/vim-fugitive", config = 'require("plugins.fugitive")'}
 	use {"tpope/vim-surround"}
 	use {"christoomey/vim-tmux-navigator"}
+    use {"kdheepak/lazygit.nvim", config = 'require("plugins.lazygit")'}
+    use {"szw/vim-maximizer", config = 'require("plugins.maximizer")'}
     use {"tweekmonster/startuptime.vim"}
 end)
