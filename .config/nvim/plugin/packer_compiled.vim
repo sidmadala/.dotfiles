@@ -110,7 +110,7 @@ _packer_load = function(names, cause)
     end
 
     if cause.prefix then
-      local prefix = vim.v.count and vim.v.count or ''
+      local prefix = vim.v.count ~= 0 and vim.v.count or ''
       prefix = prefix .. '"' .. vim.v.register .. cause.prefix
       if vim.fn.mode('full') == 'no' then
         if vim.v.operator == 'c' then
@@ -138,38 +138,38 @@ end
 
 -- Pre-load configuration
 -- Post-load configuration
--- Config for: vimtex
-require("plugins.vimtex")
 -- Config for: lazygit.nvim
 require("plugins.lazygit")
+-- Config for: gruvbox
+require("plugins.colorscheme")
 -- Config for: vim-fugitive
 require("plugins.fugitive")
--- Config for: kuroi.vim
-require("plugins.colorscheme")
--- Config for: goyo.vim
-require("plugins.goyo")
 -- Config for: nvim-treesitter
 require("plugins.treesitter")
--- Config for: gruvbox
+-- Config for: vim-maximizer
+require("plugins.maximizer")
+-- Config for: rust.vim
+require("plugins.rust")
+-- Config for: vimtex
+require("plugins.vimtex")
+-- Config for: nvim-tree.lua
+require("plugins.tree")
+-- Config for: fzf.vim
+require("plugins.fzf")
+-- Config for: indentLine
+require("plugins.indentline")
+-- Config for: zenburn
+require("plugins.colorscheme")
+-- Config for: lightline.vim
+require("plugins.lightline")
+-- Config for: coc.nvim
+require("plugins.coc")
+-- Config for: goyo.vim
+require("plugins.goyo")
+-- Config for: kuroi.vim
 require("plugins.colorscheme")
 -- Config for: vista.vim
 require("plugins.vista")
--- Config for: indentLine
-require("plugins.indentline")
--- Config for: nvim-tree.lua
-require("plugins.tree")
--- Config for: lightline.vim
-require("plugins.lightline")
--- Config for: rust.vim
-require("plugins.rust")
--- Config for: fzf.vim
-require("plugins.fzf")
--- Config for: vim-maximizer
-require("plugins.maximizer")
--- Config for: coc.nvim
-require("plugins.coc")
--- Config for: zenburn
-require("plugins.colorscheme")
 -- Conditional loads
 -- Load plugins in order defined by `after`
 END
