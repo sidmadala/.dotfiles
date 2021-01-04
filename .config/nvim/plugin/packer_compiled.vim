@@ -138,38 +138,38 @@ end
 
 -- Pre-load configuration
 -- Post-load configuration
--- Config for: lazygit.nvim
-require("plugins.lazygit")
--- Config for: gruvbox
-require("plugins.colorscheme")
--- Config for: vim-fugitive
-require("plugins.fugitive")
--- Config for: nvim-treesitter
-require("plugins.treesitter")
--- Config for: vim-maximizer
-require("plugins.maximizer")
--- Config for: rust.vim
-require("plugins.rust")
--- Config for: vimtex
-require("plugins.vimtex")
--- Config for: nvim-tree.lua
-require("plugins.tree")
--- Config for: fzf.vim
-require("plugins.fzf")
--- Config for: indentLine
-require("plugins.indentline")
--- Config for: zenburn
-require("plugins.colorscheme")
--- Config for: lightline.vim
-require("plugins.lightline")
--- Config for: coc.nvim
-require("plugins.coc")
 -- Config for: goyo.vim
 require("plugins.goyo")
 -- Config for: kuroi.vim
 require("plugins.colorscheme")
+-- Config for: vimtex
+require("plugins.vimtex")
+-- Config for: vim-maximizer
+require("plugins.maximizer")
+-- Config for: gruvbox
+require("plugins.colorscheme")
+-- Config for: nvim-tree.lua
+require("plugins.tree")
+-- Config for: zenburn
+require("plugins.colorscheme")
+-- Config for: rust.vim
+require("plugins.rust")
+-- Config for: lightline.vim
+require("plugins.lightline")
+-- Config for: vim-fugitive
+require("plugins.fugitive")
+-- Config for: coc.nvim
+require("plugins.coc")
+-- Config for: nvim-treesitter
+require("plugins.treesitter")
+-- Config for: indentLine
+require("plugins.indentline")
 -- Config for: vista.vim
 require("plugins.vista")
+-- Config for: fzf.vim
+require("plugins.fzf")
+-- Config for: lazygit.nvim
+require("plugins.lazygit")
 -- Conditional loads
 -- Load plugins in order defined by `after`
 END

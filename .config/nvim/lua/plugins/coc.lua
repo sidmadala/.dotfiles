@@ -24,7 +24,7 @@ vim.cmd [[ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>" ]]
 
 -- Coc FZF
 
-vimp.nnoremap({"silent"}, "<leader>a", ":<C-u>CocFzfList diagnostics<CR>")
+vimp.nnoremap({"silent"}, "<leader>d", ":<C-u>CocFzfList diagnostics<CR>")
 vimp.nnoremap({"silent"}, "<leader>s", ":<C-u>CocFzfList diagnostics --current-buf<CR>")
 vimp.nnoremap({"silent"}, "<leader>e", ":<C-u>CocFzfList extensions<CR>")
 

@@ -10,7 +10,7 @@ end
 -- This could make the display more compact or more spacious.
 -- e.g., more compact: ["▸ ", ""]
 -- Note: this option only works the LSP executives, doesn't work for `:Vista ctags`.
--- vim.cmd [[g:vista_icon_indent = ["╰─▸ ", "├─▸ "] ]]
+vim.cmd [[let g:vista_icon_indent=["╰─▸ ", "├─▸ "] ]]
 
 -- Executive used when opening vista sidebar without specifying it.
 -- See all the avaliable executives via `:echo g:vista#executives`.
