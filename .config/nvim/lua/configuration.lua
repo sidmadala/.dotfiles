@@ -11,6 +11,11 @@ if not pcall(require, 'vimp') then
    return
 end
 
+-- Providers
+vim.g.python3_host_prog = "/usr/local/bin/python3.9"
+vim.g.loaded_python_provider = 0  -- disabling python2 support
+
+
 -- Imports
 -- local vimp = require("vimp")
 local global, opt, buf, win, cmd = vim.g, vim.o, vim.bo, vim.wo, vim.cmd
