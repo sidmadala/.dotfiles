@@ -123,9 +123,10 @@ _packer_load = function(names, cause)
       vim.fn.feedkeys(prefix, 'n')
     end
 
-    -- NOTE: I'm not sure if the below substitution is correct; it might correspond to the literal
-    -- characters \<Plug> rather than the special <Plug> key.
-    vim.fn.feedkeys(string.gsub(string.gsub(cause.keys, '^<Plug>', '\\<Plug>') .. extra, '<[cC][rR]>', '\r'))
+    local formatted_plug_key = string.format('%c%c%c', 0x80, 253, 83)
+    local keys = string.gsub(cause.keys, '^<Plug>', formatted_plug_key) .. extra
+    local escaped_keys = string.gsub(keys, '<[cC][rR]>', '\r')
+    vim.fn.feedkeys(escaped_keys)
   elseif cause.event then
     vim.cmd(fmt('doautocmd <nomodeline> %s', cause.event))
   elseif cause.ft then
@@ -138,38 +139,38 @@ end
 
 -- Pre-load configuration
 -- Post-load configuration
--- Config for: rust.vim
-require("plugins.rust")
--- Config for: kuroi.vim
-require("plugins.colorscheme")
--- Config for: lightline.vim
-require("plugins.lightline")
--- Config for: coc.nvim
-require("plugins.coc")
--- Config for: vim-fugitive
-require("plugins.fugitive")
--- Config for: nvim-tree.lua
-require("plugins.tree")
--- Config for: indentLine
-require("plugins.indentline")
--- Config for: fzf.vim
-require("plugins.fzf")
--- Config for: zenburn
-require("plugins.colorscheme")
--- Config for: vimtex
-require("plugins.vimtex")
--- Config for: goyo.vim
-require("plugins.goyo")
--- Config for: nvim-treesitter
-require("plugins.treesitter")
--- Config for: vista.vim
-require("plugins.vista")
--- Config for: lazygit.nvim
-require("plugins.lazygit")
 -- Config for: gruvbox
 require("plugins.colorscheme")
 -- Config for: vim-maximizer
 require("plugins.maximizer")
+-- Config for: fzf.vim
+require("plugins.fzf")
+-- Config for: nvim-treesitter
+require("plugins.treesitter")
+-- Config for: goyo.vim
+require("plugins.goyo")
+-- Config for: kuroi.vim
+require("plugins.colorscheme")
+-- Config for: vimtex
+require("plugins.vimtex")
+-- Config for: vista.vim
+require("plugins.vista")
+-- Config for: vim-fugitive
+require("plugins.fugitive")
+-- Config for: nvim-tree.lua
+require("plugins.tree")
+-- Config for: zenburn
+require("plugins.colorscheme")
+-- Config for: rust.vim
+require("plugins.rust")
+-- Config for: indentLine
+require("plugins.indentline")
+-- Config for: lightline.vim
+require("plugins.lightline")
+-- Config for: coc.nvim
+require("plugins.coc")
+-- Config for: lazygit.nvim
+require("plugins.lazygit")
 -- Conditional loads
 -- Load plugins in order defined by `after`
 END
@@ -187,4 +188,5 @@ augroup packer_load_aucmds
   au!
   " Filetype lazy-loads
   " Event lazy-loads
+  " Function lazy-loads
 augroup END

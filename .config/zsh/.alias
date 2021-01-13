@@ -2,7 +2,7 @@
 # Aliases for common commands
 
 # List commands 
-alias l='ls -alG'
+alias l='ls -alhG'
 alias ll='ls -lG'
 alias lm='ls -alG | more'
 

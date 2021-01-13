@@ -9,8 +9,8 @@ end
 vimp.nnoremap("<leader>ff", ":Files<cr>")
 vimp.nnoremap("<leader>fg", ":GFiles<cr>")
 vimp.nnoremap("<leader>fc", ":Commits<cr>")
-vimp.nnoremap("<leader>rg", ":Rg")
-vimp.nnoremap("<leader>b", ":Buffers")
+vimp.nnoremap("<leader>rg", ":Rg<cr>")
+vimp.nnoremap("<leader>b", ":Buffers<cr>")
 
 -- Always enable preview window on the right with 60% width
 -- vim.g.fzf_preview_window = "right:60"
