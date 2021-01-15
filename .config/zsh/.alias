@@ -17,5 +17,8 @@ alias lg='lazygit'
 alias cleanup='brew cleanup --prune 0 && conda clean -a && docker system prune -a'
 
 # Duke OIT login commands
-alias oit='ssh -XY smm158@login.oit.duke.edu'
+# alias oit='ssh -XY smm158@login.oit.duke.edu'
 # alias vcm='ssh -XY vcm@vcm-15991.vm.duke.edu'
+alias lab='ssh -XY smm158@krish-cmp-00.egr.duke.edu'
+alias vpn-up='sudo openconnect --background --user=smm158  vpn.duke.edu'
+alias vpn-down='sudo kill -2 `pgrep openconnect`'
