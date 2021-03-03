@@ -52,6 +52,5 @@ source <(sheldon source)
 # Removing duplicates from path
 typeset -aU path
 
-
 # profiling zsh
 # zprof

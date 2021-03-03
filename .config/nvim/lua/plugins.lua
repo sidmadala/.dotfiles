@@ -18,6 +18,8 @@ vim.cmd [[packadd packer.nvim]]
 -- Automatically compile lazy loaders
 vim.cmd [[ autocmd BufWritePost plugins.lua PackerCompile ]]
 
+-- local use = require("packer").use
+
 require("packer").startup(function()
 
 	-- Essential
@@ -29,7 +31,8 @@ require("packer").startup(function()
 	use {"aonemd/kuroi.vim", config = 'require("plugins.colorscheme")'}
     use {"morhetz/gruvbox", config = 'require("plugins.colorscheme")'}
 	use {"itchyny/lightline.vim", config = 'require("plugins.lightline")'}
-	use {"Yggdroot/indentLine", config = 'require("plugins.indentline")'}
+	use {"Yggdroot/indentLine", config = 'require("plugins.indentline")', disable = true}
+    use {"lukas-reineke/indent-blankline.nvim", config = 'require("plugins.indentblankline")', branch = "lua"}
 	use {"junegunn/goyo.vim", config = 'require("plugins.goyo")'}
 	use {"kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons", config = 'require("plugins.tree")'}
 
