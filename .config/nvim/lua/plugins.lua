@@ -43,11 +43,9 @@ require("packer").startup(function()
 	use {"liuchengxu/vista.vim", config = 'require("plugins.vista")'}
 	use {"rust-lang/rust.vim", config = 'require("plugins.rust")'}
 
-	-- use {"neovim/nvim-lspconfig", config = 'require("plugins.lsp_config")', disable = true}
-	-- use {"nvim-lua/completion-nvim", config = 'require("plugins.completion")', disable, true}
-	-- use {"ojroques/nvim-lspfuzzy", config = 'require("plugins.lspfuzzy")', disable = true}
-    -- use {"nvim-telescope/telescope.nvim", requires = {"nvim-lua/plenary.nvim", "nvim-lua/popup.nvim"}, config = 'require("plugins.telescope")', disable = true}
 
+    -- Debugging 
+    use {"puremourning/vimspector", config = 'require("plugins.vimspector")'}
 
 	-- Utilities
     use {"SirVer/ultisnips", config = 'require("plugins.ultisnips")', disable = true}
