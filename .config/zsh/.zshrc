@@ -46,6 +46,9 @@ fi
 # starship prompt
 eval "$(starship init zsh)"
 
+# navi completion
+eval "$(navi widget zsh)"
+
 # sheldon source
 source <(sheldon source)
 

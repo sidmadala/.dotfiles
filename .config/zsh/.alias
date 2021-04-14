@@ -14,12 +14,14 @@ alias brewdeps='brew leaves | xargs brew deps --installed --for-each | sed "s/^.
 alias j='_zlua'
 alias jh='_zlua -I -t .'
 alias lg='lazygit'
-# alias cleanup='brew cleanup --prune 0 && conda clean -a && rm -rf $XDG_CONFIG_HOME/rust/cargo/registry && docker system prune -a'
 
 cleanup () {
     brew cleanup --prune 0
     conda clean -a
     rm -rf $XDG_CONFIG_HOME/rust/cargo/registry
+    rm -rf $HOME/.gnupg
+    rm -rf $HOME/.matplotlib
+    rm $HOME/.vimspector.log
     docker system prune -a
 }
 
