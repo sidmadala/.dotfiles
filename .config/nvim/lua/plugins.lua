@@ -27,7 +27,9 @@ require("packer").startup(function()
 	use {"svermeulen/vimpeccable"}
 
 	-- Aesthetic
+    use {"glepnir/dashboard-nvim", confg = 'require("plugins.dashboard")', disable = true}
 	use {"jnurmine/zenburn", config = 'require("plugins.colorscheme")'}
+    use {"ghifarit53/tokyonight-vim", config = 'require("plugins.colorscheme")'}
 	use {"aonemd/kuroi.vim", config = 'require("plugins.colorscheme")'}
     use {"morhetz/gruvbox", config = 'require("plugins.colorscheme")'}
 	use {"itchyny/lightline.vim", config = 'require("plugins.lightline")'}
@@ -44,7 +46,7 @@ require("packer").startup(function()
 	use {"rust-lang/rust.vim", config = 'require("plugins.rust")'}
 
 
-    -- Debugging 
+    -- Debugging
     use {"puremourning/vimspector", config = 'require("plugins.vimspector")'}
 
 	-- Utilities

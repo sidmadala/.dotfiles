@@ -17,7 +17,10 @@ alias lg='lazygit'
 
 cleanup () {
     brew cleanup --prune 0
-    conda clean -a
+    conda clean -a -y
+    if [ -x "$(command -v pip)" ]; then
+        rm -rf "$(pip cache dir)"
+    fi
     rm -rf $XDG_CONFIG_HOME/rust/cargo/registry
     rm -rf $HOME/.gnupg
     rm -rf $HOME/.matplotlib
