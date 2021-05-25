@@ -52,3 +52,6 @@ export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 # Lazygit config path
 # export LAZYGIT_NEW_DIR_FILE="$XDG_CONFIG_HOME/lazygit"
 
+# Qiskit config path
+export QISKIT_SETTINGS="$XDG_CONFIG_HOME/qiskit"
+

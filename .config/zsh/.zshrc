@@ -35,6 +35,8 @@ fi
 export GIT_EDITOR=nvim
 export TERM=xterm-256color
 export MANPAGER="nvim -c 'set ft=man' -"
+export VISUAL=nvim
+export EDITOR=nvim
 
 # fnm source
 if [ -x "/usr/local/Cellar/fnm" ] && [ -z $TMUX ]; then
