@@ -78,7 +78,7 @@ win.signcolumn = "yes"  	        -- add column for errors/linting
 global.showcmd = true				-- show command in bottom bar
 global.showmatch = false			-- no highlight matching braces
 opt.mouse = "a"						-- allowing mouse support in all modes
-opt.showtabline = 2                 -- show tabs
+-- opt.showtabline = 0                 -- show tabs
 opt.termguicolors = true            -- setting colors for terminal gui
 
 -- Dropdowns

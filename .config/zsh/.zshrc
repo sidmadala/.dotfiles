@@ -54,6 +54,9 @@ eval "$(navi widget zsh)"
 # sheldon source
 source <(sheldon source)
 
+# zoxide source
+eval "$(zoxide init zsh --cmd j)"
+
 # Removing duplicates from path
 typeset -aU path
 

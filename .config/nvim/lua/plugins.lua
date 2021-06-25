@@ -37,6 +37,7 @@ require("packer").startup(function()
     use {"lukas-reineke/indent-blankline.nvim", config = 'require("plugins.indentblankline")', branch = "lua"}
 	use {"junegunn/goyo.vim", config = 'require("plugins.goyo")'}
 	use {"kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons", config = 'require("plugins.tree")'}
+    use {"romgrk/barbar.nvim", confg = 'require(plugins.barbar)'}
 
 	-- LSP
     use {"neoclide/coc.nvim", branch = "release", run = "yarn install --frozen-lockfile", config = 'require("plugins.coc")'}

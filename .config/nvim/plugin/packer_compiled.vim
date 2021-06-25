@@ -46,7 +46,7 @@ local function save_profiles(threshold)
   _G._packer.profile_output = results
 end
 
-time("Luarocks path setup", true)
+time([[Luarocks path setup]], true)
 local package_path_str = "/Users/sidmadala/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/sidmadala/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/sidmadala/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/sidmadala/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
 local install_cpath_pattern = "/Users/sidmadala/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
@@ -57,23 +57,28 @@ if not string.find(package.cpath, install_cpath_pattern, 1, true) then
   package.cpath = package.cpath .. ';' .. install_cpath_pattern
 end
 
-time("Luarocks path setup", false)
-time("try_loadstring definition", true)
+time([[Luarocks path setup]], false)
+time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
   local success, result = pcall(loadstring(s))
   if not success then
-    print('Error running ' .. component .. ' for ' .. name)
-    error(result)
+    vim.schedule(function()
+      vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
+    end)
   end
   return result
 end
 
-time("try_loadstring definition", false)
-time("Defining packer_plugins", true)
+time([[try_loadstring definition]], false)
+time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["auto-pairs"] = {
     loaded = true,
     path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/auto-pairs"
+  },
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/barbar.nvim"
   },
   ["coc-fzf"] = {
     loaded = true,
@@ -212,79 +217,79 @@ _G.packer_plugins = {
   }
 }
 
-time("Defining packer_plugins", false)
--- Config for: indent-blankline.nvim
-time("Config for indent-blankline.nvim", true)
-require("plugins.indentblankline")
-time("Config for indent-blankline.nvim", false)
--- Config for: rust.vim
-time("Config for rust.vim", true)
-require("plugins.rust")
-time("Config for rust.vim", false)
--- Config for: fzf.vim
-time("Config for fzf.vim", true)
-require("plugins.fzf")
-time("Config for fzf.vim", false)
+time([[Defining packer_plugins]], false)
 -- Config for: gruvbox
-time("Config for gruvbox", true)
+time([[Config for gruvbox]], true)
 require("plugins.colorscheme")
-time("Config for gruvbox", false)
--- Config for: vim-fugitive
-time("Config for vim-fugitive", true)
-require("plugins.fugitive")
-time("Config for vim-fugitive", false)
--- Config for: goyo.vim
-time("Config for goyo.vim", true)
-require("plugins.goyo")
-time("Config for goyo.vim", false)
--- Config for: coc.nvim
-time("Config for coc.nvim", true)
-require("plugins.coc")
-time("Config for coc.nvim", false)
+time([[Config for gruvbox]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+require("plugins.indentblankline")
+time([[Config for indent-blankline.nvim]], false)
 -- Config for: kuroi.vim
-time("Config for kuroi.vim", true)
+time([[Config for kuroi.vim]], true)
 require("plugins.colorscheme")
-time("Config for kuroi.vim", false)
--- Config for: vimspector
-time("Config for vimspector", true)
-require("plugins.vimspector")
-time("Config for vimspector", false)
--- Config for: vimtex
-time("Config for vimtex", true)
-require("plugins.vimtex")
-time("Config for vimtex", false)
--- Config for: lightline.vim
-time("Config for lightline.vim", true)
-require("plugins.lightline")
-time("Config for lightline.vim", false)
--- Config for: nvim-treesitter
-time("Config for nvim-treesitter", true)
-require("plugins.treesitter")
-time("Config for nvim-treesitter", false)
--- Config for: nvim-tree.lua
-time("Config for nvim-tree.lua", true)
-require("plugins.tree")
-time("Config for nvim-tree.lua", false)
--- Config for: vista.vim
-time("Config for vista.vim", true)
-require("plugins.vista")
-time("Config for vista.vim", false)
--- Config for: vim-maximizer
-time("Config for vim-maximizer", true)
-require("plugins.maximizer")
-time("Config for vim-maximizer", false)
--- Config for: tokyonight-vim
-time("Config for tokyonight-vim", true)
-require("plugins.colorscheme")
-time("Config for tokyonight-vim", false)
--- Config for: zenburn
-time("Config for zenburn", true)
-require("plugins.colorscheme")
-time("Config for zenburn", false)
+time([[Config for kuroi.vim]], false)
 -- Config for: lazygit.nvim
-time("Config for lazygit.nvim", true)
+time([[Config for lazygit.nvim]], true)
 require("plugins.lazygit")
-time("Config for lazygit.nvim", false)
+time([[Config for lazygit.nvim]], false)
+-- Config for: vimspector
+time([[Config for vimspector]], true)
+require("plugins.vimspector")
+time([[Config for vimspector]], false)
+-- Config for: lightline.vim
+time([[Config for lightline.vim]], true)
+require("plugins.lightline")
+time([[Config for lightline.vim]], false)
+-- Config for: vimtex
+time([[Config for vimtex]], true)
+require("plugins.vimtex")
+time([[Config for vimtex]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require("plugins.tree")
+time([[Config for nvim-tree.lua]], false)
+-- Config for: vista.vim
+time([[Config for vista.vim]], true)
+require("plugins.vista")
+time([[Config for vista.vim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require("plugins.treesitter")
+time([[Config for nvim-treesitter]], false)
+-- Config for: zenburn
+time([[Config for zenburn]], true)
+require("plugins.colorscheme")
+time([[Config for zenburn]], false)
+-- Config for: rust.vim
+time([[Config for rust.vim]], true)
+require("plugins.rust")
+time([[Config for rust.vim]], false)
+-- Config for: tokyonight-vim
+time([[Config for tokyonight-vim]], true)
+require("plugins.colorscheme")
+time([[Config for tokyonight-vim]], false)
+-- Config for: coc.nvim
+time([[Config for coc.nvim]], true)
+require("plugins.coc")
+time([[Config for coc.nvim]], false)
+-- Config for: vim-fugitive
+time([[Config for vim-fugitive]], true)
+require("plugins.fugitive")
+time([[Config for vim-fugitive]], false)
+-- Config for: fzf.vim
+time([[Config for fzf.vim]], true)
+require("plugins.fzf")
+time([[Config for fzf.vim]], false)
+-- Config for: vim-maximizer
+time([[Config for vim-maximizer]], true)
+require("plugins.maximizer")
+time([[Config for vim-maximizer]], false)
+-- Config for: goyo.vim
+time([[Config for goyo.vim]], true)
+require("plugins.goyo")
+time([[Config for goyo.vim]], false)
 if should_profile then save_profiles() end
 
 END
