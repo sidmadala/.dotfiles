@@ -34,7 +34,7 @@ require("packer").startup(function()
     use {"morhetz/gruvbox", config = 'require("plugins.colorscheme")'}
 	use {"itchyny/lightline.vim", config = 'require("plugins.lightline")'}
 	use {"Yggdroot/indentLine", config = 'require("plugins.indentline")', disable = true}
-    use {"lukas-reineke/indent-blankline.nvim", config = 'require("plugins.indentblankline")', branch = "lua"}
+    use {"lukas-reineke/indent-blankline.nvim", config = 'require("plugins.indentblankline")'}
 	use {"junegunn/goyo.vim", config = 'require("plugins.goyo")'}
 	use {"kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons", config = 'require("plugins.tree")'}
     use {"romgrk/barbar.nvim", confg = 'require(plugins.barbar)'}
