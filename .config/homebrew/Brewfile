@@ -17,6 +17,7 @@ brew "unbound"
 brew "gnutls"
 brew "go"
 brew "htop"
+brew "hugo"
 brew "lazygit"
 brew "luajit", args: ["HEAD"]
 brew "mas"
