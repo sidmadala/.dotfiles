@@ -46,7 +46,6 @@ require("packer").startup(function()
 	use {"liuchengxu/vista.vim", config = 'require("plugins.vista")'}
 	use {"rust-lang/rust.vim", config = 'require("plugins.rust")'}
 
-
     -- Debugging
     use {"puremourning/vimspector", config = 'require("plugins.vimspector")'}
 

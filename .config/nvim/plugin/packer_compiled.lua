@@ -1,17 +1,14 @@
-" Automatically generated packer.nvim plugin loader code
+-- Automatically generated packer.nvim plugin loader code
 
-if !has('nvim-0.5')
-  echohl WarningMsg
-  echom "Invalid Neovim version for packer.nvim!"
-  echohl None
-  finish
-endif
+if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~= 1 then
+  vim.api.nvim_command('echohl WarningMsg | echom "Invalid Neovim version for packer.nvim! | echohl None"')
+  return
+end
 
-packadd packer.nvim
+vim.api.nvim_command('packadd packer.nvim')
 
-try
+local no_errors, error_msg = pcall(function()
 
-lua << END
   local time
   local profile_info
   local should_profile = false
@@ -218,6 +215,34 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: rust.vim
+time([[Config for rust.vim]], true)
+require("plugins.rust")
+time([[Config for rust.vim]], false)
+-- Config for: tokyonight-vim
+time([[Config for tokyonight-vim]], true)
+require("plugins.colorscheme")
+time([[Config for tokyonight-vim]], false)
+-- Config for: coc.nvim
+time([[Config for coc.nvim]], true)
+require("plugins.coc")
+time([[Config for coc.nvim]], false)
+-- Config for: vim-fugitive
+time([[Config for vim-fugitive]], true)
+require("plugins.fugitive")
+time([[Config for vim-fugitive]], false)
+-- Config for: fzf.vim
+time([[Config for fzf.vim]], true)
+require("plugins.fzf")
+time([[Config for fzf.vim]], false)
+-- Config for: vim-maximizer
+time([[Config for vim-maximizer]], true)
+require("plugins.maximizer")
+time([[Config for vim-maximizer]], false)
+-- Config for: goyo.vim
+time([[Config for goyo.vim]], true)
+require("plugins.goyo")
+time([[Config for goyo.vim]], false)
 -- Config for: gruvbox
 time([[Config for gruvbox]], true)
 require("plugins.colorscheme")
@@ -262,41 +287,10 @@ time([[Config for nvim-treesitter]], false)
 time([[Config for zenburn]], true)
 require("plugins.colorscheme")
 time([[Config for zenburn]], false)
--- Config for: rust.vim
-time([[Config for rust.vim]], true)
-require("plugins.rust")
-time([[Config for rust.vim]], false)
--- Config for: tokyonight-vim
-time([[Config for tokyonight-vim]], true)
-require("plugins.colorscheme")
-time([[Config for tokyonight-vim]], false)
--- Config for: coc.nvim
-time([[Config for coc.nvim]], true)
-require("plugins.coc")
-time([[Config for coc.nvim]], false)
--- Config for: vim-fugitive
-time([[Config for vim-fugitive]], true)
-require("plugins.fugitive")
-time([[Config for vim-fugitive]], false)
--- Config for: fzf.vim
-time([[Config for fzf.vim]], true)
-require("plugins.fzf")
-time([[Config for fzf.vim]], false)
--- Config for: vim-maximizer
-time([[Config for vim-maximizer]], true)
-require("plugins.maximizer")
-time([[Config for vim-maximizer]], false)
--- Config for: goyo.vim
-time([[Config for goyo.vim]], true)
-require("plugins.goyo")
-time([[Config for goyo.vim]], false)
 if should_profile then save_profiles() end
 
-END
+end)
 
-catch
-  echohl ErrorMsg
-  echom "Error in packer_compiled: " .. v:exception
-  echom "Please check your config for correctness"
-  echohl None
-endtry
+if not no_errors then
+  vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
+end
