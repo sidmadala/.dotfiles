@@ -34,7 +34,7 @@ fi
 # various settings
 export GIT_EDITOR=nvim
 export TERM=xterm-256color
-export MANPAGER="nvim -c 'set ft=man' -"
+export MANPAGER='nvim +Man!'
 export VISUAL=nvim
 export EDITOR=nvim
 
