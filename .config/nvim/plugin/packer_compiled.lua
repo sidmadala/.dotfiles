@@ -57,7 +57,7 @@ end
 time([[Luarocks path setup]], false)
 time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
-  local success, result = pcall(loadstring(s))
+  local success, result = pcall(loadstring(s), name, _G.packer_plugins[name])
   if not success then
     vim.schedule(function()
       vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
@@ -71,186 +71,217 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["auto-pairs"] = {
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/auto-pairs"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/auto-pairs",
+    url = "https://github.com/jiangmiao/auto-pairs"
   },
   ["barbar.nvim"] = {
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/barbar.nvim"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
   },
   ["coc-fzf"] = {
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/coc-fzf"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/coc-fzf",
+    url = "https://github.com/antoinemadec/coc-fzf"
   },
   ["coc.nvim"] = {
     config = { 'require("plugins.coc")' },
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/coc.nvim"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/coc.nvim",
+    url = "https://github.com/neoclide/coc.nvim"
   },
   fzf = {
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/fzf"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/fzf",
+    url = "https://github.com/junegunn/fzf"
   },
   ["fzf.vim"] = {
     config = { 'require("plugins.fzf")' },
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/fzf.vim"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/fzf.vim",
+    url = "https://github.com/junegunn/fzf.vim"
   },
   ["goyo.vim"] = {
     config = { 'require("plugins.goyo")' },
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/goyo.vim"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/goyo.vim",
+    url = "https://github.com/junegunn/goyo.vim"
   },
   gruvbox = {
     config = { 'require("plugins.colorscheme")' },
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/gruvbox"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
   },
   ["indent-blankline.nvim"] = {
     config = { 'require("plugins.indentblankline")' },
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["kuroi.vim"] = {
     config = { 'require("plugins.colorscheme")' },
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/kuroi.vim"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/kuroi.vim",
+    url = "https://github.com/aonemd/kuroi.vim"
   },
   ["lazygit.nvim"] = {
     config = { 'require("plugins.lazygit")' },
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/lazygit.nvim"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+    url = "https://github.com/kdheepak/lazygit.nvim"
   },
   ["lightline.vim"] = {
     config = { 'require("plugins.lightline")' },
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/lightline.vim"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/lightline.vim",
+    url = "https://github.com/itchyny/lightline.vim"
   },
   ["nvim-tree.lua"] = {
     config = { 'require("plugins.tree")' },
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     config = { 'require("plugins.treesitter")' },
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = false,
     needs_bufread = false,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/opt/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
   },
   ["rust.vim"] = {
     config = { 'require("plugins.rust")' },
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/rust.vim"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/rust.vim",
+    url = "https://github.com/rust-lang/rust.vim"
   },
   ["startuptime.vim"] = {
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/startuptime.vim"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/startuptime.vim",
+    url = "https://github.com/tweekmonster/startuptime.vim"
   },
   ["tokyonight-vim"] = {
     config = { 'require("plugins.colorscheme")' },
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/tokyonight-vim"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/tokyonight-vim",
+    url = "https://github.com/ghifarit53/tokyonight-vim"
   },
   ["vim-commentary"] = {
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vim-commentary"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-easy-align"] = {
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vim-easy-align"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vim-easy-align",
+    url = "https://github.com/junegunn/vim-easy-align"
   },
   ["vim-fugitive"] = {
     config = { 'require("plugins.fugitive")' },
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-maximizer"] = {
     config = { 'require("plugins.maximizer")' },
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vim-maximizer"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vim-maximizer",
+    url = "https://github.com/szw/vim-maximizer"
   },
   ["vim-snippets"] = {
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vim-snippets"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vim-snippets",
+    url = "https://github.com/honza/vim-snippets"
   },
   ["vim-surround"] = {
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vim-surround"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   },
   ["vim-tmux-navigator"] = {
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
   },
   vimpeccable = {
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vimpeccable"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vimpeccable",
+    url = "https://github.com/svermeulen/vimpeccable"
   },
   vimspector = {
     config = { 'require("plugins.vimspector")' },
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vimspector"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vimspector",
+    url = "https://github.com/puremourning/vimspector"
   },
   vimtex = {
     config = { 'require("plugins.vimtex")' },
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vimtex"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vimtex",
+    url = "https://github.com/lervag/vimtex"
   },
   ["vista.vim"] = {
     config = { 'require("plugins.vista")' },
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vista.vim"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/vista.vim",
+    url = "https://github.com/liuchengxu/vista.vim"
   },
   zenburn = {
     config = { 'require("plugins.colorscheme")' },
     loaded = true,
-    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/zenburn"
+    path = "/Users/sidmadala/.local/share/nvim/site/pack/packer/start/zenburn",
+    url = "https://github.com/jnurmine/zenburn"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: rust.vim
-time([[Config for rust.vim]], true)
-require("plugins.rust")
-time([[Config for rust.vim]], false)
--- Config for: tokyonight-vim
-time([[Config for tokyonight-vim]], true)
-require("plugins.colorscheme")
-time([[Config for tokyonight-vim]], false)
 -- Config for: coc.nvim
 time([[Config for coc.nvim]], true)
 require("plugins.coc")
 time([[Config for coc.nvim]], false)
--- Config for: vim-fugitive
-time([[Config for vim-fugitive]], true)
-require("plugins.fugitive")
-time([[Config for vim-fugitive]], false)
--- Config for: fzf.vim
-time([[Config for fzf.vim]], true)
-require("plugins.fzf")
-time([[Config for fzf.vim]], false)
--- Config for: vim-maximizer
-time([[Config for vim-maximizer]], true)
-require("plugins.maximizer")
-time([[Config for vim-maximizer]], false)
+-- Config for: rust.vim
+time([[Config for rust.vim]], true)
+require("plugins.rust")
+time([[Config for rust.vim]], false)
+-- Config for: vimspector
+time([[Config for vimspector]], true)
+require("plugins.vimspector")
+time([[Config for vimspector]], false)
 -- Config for: goyo.vim
 time([[Config for goyo.vim]], true)
 require("plugins.goyo")
 time([[Config for goyo.vim]], false)
--- Config for: gruvbox
-time([[Config for gruvbox]], true)
+-- Config for: vimtex
+time([[Config for vimtex]], true)
+require("plugins.vimtex")
+time([[Config for vimtex]], false)
+-- Config for: tokyonight-vim
+time([[Config for tokyonight-vim]], true)
 require("plugins.colorscheme")
-time([[Config for gruvbox]], false)
+time([[Config for tokyonight-vim]], false)
+-- Config for: vista.vim
+time([[Config for vista.vim]], true)
+require("plugins.vista")
+time([[Config for vista.vim]], false)
 -- Config for: indent-blankline.nvim
 time([[Config for indent-blankline.nvim]], true)
 require("plugins.indentblankline")
 time([[Config for indent-blankline.nvim]], false)
+-- Config for: zenburn
+time([[Config for zenburn]], true)
+require("plugins.colorscheme")
+time([[Config for zenburn]], false)
 -- Config for: kuroi.vim
 time([[Config for kuroi.vim]], true)
 require("plugins.colorscheme")
@@ -259,38 +290,39 @@ time([[Config for kuroi.vim]], false)
 time([[Config for lazygit.nvim]], true)
 require("plugins.lazygit")
 time([[Config for lazygit.nvim]], false)
--- Config for: vimspector
-time([[Config for vimspector]], true)
-require("plugins.vimspector")
-time([[Config for vimspector]], false)
 -- Config for: lightline.vim
 time([[Config for lightline.vim]], true)
 require("plugins.lightline")
 time([[Config for lightline.vim]], false)
--- Config for: vimtex
-time([[Config for vimtex]], true)
-require("plugins.vimtex")
-time([[Config for vimtex]], false)
+-- Config for: vim-maximizer
+time([[Config for vim-maximizer]], true)
+require("plugins.maximizer")
+time([[Config for vim-maximizer]], false)
+-- Config for: vim-fugitive
+time([[Config for vim-fugitive]], true)
+require("plugins.fugitive")
+time([[Config for vim-fugitive]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 require("plugins.tree")
 time([[Config for nvim-tree.lua]], false)
--- Config for: vista.vim
-time([[Config for vista.vim]], true)
-require("plugins.vista")
-time([[Config for vista.vim]], false)
+-- Config for: fzf.vim
+time([[Config for fzf.vim]], true)
+require("plugins.fzf")
+time([[Config for fzf.vim]], false)
+-- Config for: gruvbox
+time([[Config for gruvbox]], true)
+require("plugins.colorscheme")
+time([[Config for gruvbox]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require("plugins.treesitter")
 time([[Config for nvim-treesitter]], false)
--- Config for: zenburn
-time([[Config for zenburn]], true)
-require("plugins.colorscheme")
-time([[Config for zenburn]], false)
 if should_profile then save_profiles() end
 
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

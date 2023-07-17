@@ -2,3 +2,5 @@
 [user]
 	name = Siddarth Madala
 	email = siddarth.madala@duke.edu
+[credential]
+	helper = osxkeychain

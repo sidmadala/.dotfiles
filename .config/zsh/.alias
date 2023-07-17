@@ -32,6 +32,16 @@ cleanup () {
 # Duke OIT login commands
 # alias oit='ssh -XY smm158@login.oit.duke.edu'
 # alias vcm='ssh -XY vcm@vcm-15991.vm.duke.edu'
-alias lab='ssh -XY smm158@krish-cmp-00.egr.duke.edu'
-alias vpn-up='sudo openconnect --background --user=smm158  vpn.duke.edu'
+alias lab='ssh -XY smadala2@'
+
+# UIUC VPN commands
+alias vpn-up='sudo openconnect --background --user=smadala2  vpn.illinois.edu'
 alias vpn-down='sudo kill -2 `pgrep openconnect`'
+
+# UIUC HAL Login
+alias hal='ssh -XY sidmadala@hal.ncsa.illinois.edu'
+
+# Youtube-dl Audio download
+alias ydl='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3'
+
+

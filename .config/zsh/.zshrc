@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # getting system properties
 # zmodload zsh/zprof
 
@@ -39,7 +41,7 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 # fnm source
-if [ -x "/usr/local/Cellar/fnm" ] && [ -z $TMUX ]; then
+if [ -x "/opt/homebrew/Cellar/fnm" ] && [ -z $TMUX ]; then
     OLDPATH="$PATH"
     eval "$(fnm env)"
     PATH="$OLDPATH:$FNM_MULTISHELL_PATH/bin"
@@ -62,3 +64,6 @@ typeset -aU path
 
 # profiling zsh
 # zprof
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

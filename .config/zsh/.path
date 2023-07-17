@@ -6,6 +6,18 @@
 # Preventing history files from being created
 export LESSHISTFILE=" "
 
+# Setting Homebrew path
+export PATH=/opt/homebrew/bin:$PATH
+
+# Zsh completions for Homebrew
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
 # Setting config location
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -36,7 +48,8 @@ export GOBIN="$GOPATH/bin"
 export PATH=$PATH:$GOBIN
 
 # Setting JAVA_HOME 
-export JAVA_HOME="/usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home"
+export JAVA_HOME="/opt/homebrew/Cellar/openjdk/17.0.2/libexec/openjdk.jdk/Contents/Home"
+# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # Setting rustup and cargo paths
 export RUSTUP_HOME="$XDG_CONFIG_HOME/rust/rustup"
@@ -46,6 +59,9 @@ export PATH=$PATH:$CARGO_BIN
 
 # Setting npm paths
 export FNM_DIR="$XDG_CACHE_HOME/fnm"
+export FNM_LOGLEVEL="info"
+export FNM_NODE_DIST_MIRROR="https://nodejs.org/dist"
+export FNM_ARCH="arm64"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 
@@ -55,3 +71,5 @@ export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 # Qiskit config path
 export QISKIT_SETTINGS="$XDG_CONFIG_HOME/qiskit"
 
+# SMLNJ compiler path
+export PATH=/usr/local/smlnj/bin:"$PATH"
