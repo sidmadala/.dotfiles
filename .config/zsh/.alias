@@ -8,6 +8,7 @@ alias lua='luajit'
 alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
 alias brewdeps='brew leaves | xargs brew deps --installed --for-each | sed "s/^.*:/$(tput setaf 4)&$(tput sgr0)/"'
 alias lg='lazygit'
+alias asdf='rtx'
 
 # List commands 
 alias l='ls -alhG'
