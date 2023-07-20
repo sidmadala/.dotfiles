@@ -9,23 +9,26 @@ vim.api.nvim_command('packadd packer.nvim')
 
 local no_errors, error_msg = pcall(function()
 
-  local time
-  local profile_info
-  local should_profile = false
-  if should_profile then
-    local hrtime = vim.loop.hrtime
-    profile_info = {}
-    time = function(chunk, start)
-      if start then
-        profile_info[chunk] = hrtime()
-      else
-        profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
-      end
+_G._packer = _G._packer or {}
+_G._packer.inside_compile = true
+
+local time
+local profile_info
+local should_profile = false
+if should_profile then
+  local hrtime = vim.loop.hrtime
+  profile_info = {}
+  time = function(chunk, start)
+    if start then
+      profile_info[chunk] = hrtime()
+    else
+      profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
     end
-  else
-    time = function(chunk, start) end
   end
-  
+else
+  time = function(chunk, start) end
+end
+
 local function save_profiles(threshold)
   local sorted_times = {}
   for chunk_name, time_taken in pairs(profile_info) do
@@ -38,8 +41,10 @@ local function save_profiles(threshold)
       results[i] = elem[1] .. ' took ' .. elem[2] .. 'ms'
     end
   end
+  if threshold then
+    table.insert(results, '(Only showing plugins that took longer than ' .. threshold .. ' ms ' .. 'to load)')
+  end
 
-  _G._packer = _G._packer or {}
   _G._packer.profile_output = results
 end
 
@@ -246,6 +251,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: vim-maximizer
+time([[Config for vim-maximizer]], true)
+require("plugins.maximizer")
+time([[Config for vim-maximizer]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require("plugins.tree")
+time([[Config for nvim-tree.lua]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require("plugins.treesitter")
+time([[Config for nvim-treesitter]], false)
 -- Config for: coc.nvim
 time([[Config for coc.nvim]], true)
 require("plugins.coc")
@@ -266,10 +283,10 @@ time([[Config for goyo.vim]], false)
 time([[Config for vimtex]], true)
 require("plugins.vimtex")
 time([[Config for vimtex]], false)
--- Config for: tokyonight-vim
-time([[Config for tokyonight-vim]], true)
+-- Config for: gruvbox
+time([[Config for gruvbox]], true)
 require("plugins.colorscheme")
-time([[Config for tokyonight-vim]], false)
+time([[Config for gruvbox]], false)
 -- Config for: vista.vim
 time([[Config for vista.vim]], true)
 require("plugins.vista")
@@ -282,10 +299,22 @@ time([[Config for indent-blankline.nvim]], false)
 time([[Config for zenburn]], true)
 require("plugins.colorscheme")
 time([[Config for zenburn]], false)
+-- Config for: vim-fugitive
+time([[Config for vim-fugitive]], true)
+require("plugins.fugitive")
+time([[Config for vim-fugitive]], false)
 -- Config for: kuroi.vim
 time([[Config for kuroi.vim]], true)
 require("plugins.colorscheme")
 time([[Config for kuroi.vim]], false)
+-- Config for: tokyonight-vim
+time([[Config for tokyonight-vim]], true)
+require("plugins.colorscheme")
+time([[Config for tokyonight-vim]], false)
+-- Config for: fzf.vim
+time([[Config for fzf.vim]], true)
+require("plugins.fzf")
+time([[Config for fzf.vim]], false)
 -- Config for: lazygit.nvim
 time([[Config for lazygit.nvim]], true)
 require("plugins.lazygit")
@@ -294,30 +323,13 @@ time([[Config for lazygit.nvim]], false)
 time([[Config for lightline.vim]], true)
 require("plugins.lightline")
 time([[Config for lightline.vim]], false)
--- Config for: vim-maximizer
-time([[Config for vim-maximizer]], true)
-require("plugins.maximizer")
-time([[Config for vim-maximizer]], false)
--- Config for: vim-fugitive
-time([[Config for vim-fugitive]], true)
-require("plugins.fugitive")
-time([[Config for vim-fugitive]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require("plugins.tree")
-time([[Config for nvim-tree.lua]], false)
--- Config for: fzf.vim
-time([[Config for fzf.vim]], true)
-require("plugins.fzf")
-time([[Config for fzf.vim]], false)
--- Config for: gruvbox
-time([[Config for gruvbox]], true)
-require("plugins.colorscheme")
-time([[Config for gruvbox]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require("plugins.treesitter")
-time([[Config for nvim-treesitter]], false)
+
+_G._packer.inside_compile = false
+if _G._packer.needs_bufread == true then
+  vim.cmd("doautocmd BufRead")
+end
+_G._packer.needs_bufread = false
+
 if should_profile then save_profiles() end
 
 end)

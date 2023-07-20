@@ -1,20 +1,25 @@
 #!/bin/zsh
 # Aliases for common commands
 
-# List commands 
-alias l='ls -alhG'
-alias ll='ls -lG'
-alias lm='ls -alG | more'
 
 # Program substitutions 
 alias vim='nvim'
 alias lua='luajit'
 alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
 alias brewdeps='brew leaves | xargs brew deps --installed --for-each | sed "s/^.*:/$(tput setaf 4)&$(tput sgr0)/"'
-alias j='_zlua'
-alias jh='_zlua -I -t .'
 alias lg='lazygit'
 
+# List commands 
+alias l='ls -alhG'
+alias ll='ls -lG'
+alias lm='ls -alG | more'
+
+# Exa replacements
+alias e='exa -1alhB --icons'
+alias ee='exa -1l --icons'
+alias em='exa -1al | more'
+
+# Purge cache files
 cleanup () {
     brew cleanup --prune 0
     conda clean -a -y
@@ -25,23 +30,15 @@ cleanup () {
     rm -rf $HOME/.gnupg
     rm -rf $HOME/.matplotlib
     rm $HOME/.vimspector.log
-    docker system prune -a
+    # docker system prune -a
 }
 
-
-# Duke OIT login commands
-# alias oit='ssh -XY smm158@login.oit.duke.edu'
-# alias vcm='ssh -XY vcm@vcm-15991.vm.duke.edu'
-alias lab='ssh -XY smadala2@'
-
-# UIUC VPN commands
-alias vpn-up='sudo openconnect --background --user=smadala2  vpn.illinois.edu'
+# VPN commands
+alias vpn-up='sudo openconnect --background --user=smadala2 vpn.illinois.edu'
 alias vpn-down='sudo kill -2 `pgrep openconnect`'
 
 # UIUC HAL Login
 alias hal='ssh -XY sidmadala@hal.ncsa.illinois.edu'
 
 # Youtube-dl Audio download
-alias ydl='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3'
-
-
+# alias ydl='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3'

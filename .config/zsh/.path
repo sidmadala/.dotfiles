@@ -24,16 +24,10 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 
 # Setting sheldon config path
-# export SHELDON_CONFIG_DIR="$HOME/.config/sheldon"
 export SHELDON_CONFIG_DIR="$XDG_CONFIG_HOME/sheldon"
 
 # Setting starship config path
-# export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
-
-# Setting z.lua history path
-export _ZL_DATA="$XDG_DATA_HOME/zlua/.zlua"
-export _ZL_ECHO=1
 
 # Setting AWS-cli config path
 export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
@@ -67,9 +61,3 @@ export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 
 # Lazygit config path
 # export LAZYGIT_NEW_DIR_FILE="$XDG_CONFIG_HOME/lazygit"
-
-# Qiskit config path
-export QISKIT_SETTINGS="$XDG_CONFIG_HOME/qiskit"
-
-# SMLNJ compiler path
-export PATH=/usr/local/smlnj/bin:"$PATH"
