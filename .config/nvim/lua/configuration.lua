@@ -12,7 +12,7 @@ if not pcall(require, 'vimp') then
 end
 
 -- Providers
-vim.g.python3_host_prog = "/opt/homebrew/Caskroom/miniconda/base/bin/python"
+vim.g.python3_host_prog = "~/.local/share/rtx/installs/python/miniforge3-22.11.1-4/bin/python"
 vim.g.loaded_python_provider = 0  -- disabling python2 support
 
 

@@ -1,3 +1,11 @@
 {
-    "coc.source.ultisnips.filetypes": ["tex", "python", "rust", "typescript", "javascript", "lua"]
+    "coc.source.ultisnips.filetypes": [
+      "tex",
+      "python",
+      "rust",
+      "typescript",
+      "javascript",
+      "lua"
+    ],
+    "snippets.ultisnips.pythonPrompt": false
 }
