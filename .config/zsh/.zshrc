@@ -1,6 +1,5 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-
 # Getting system properties
 # zmodload zsh/zprof
 
@@ -67,3 +66,9 @@ typeset -aU path
 
 # profiling zsh
 # zprof
+
+# opam configuration
+[[ ! -r /Users/sidmadala/.opam/opam-init/init.zsh ]] || source /Users/sidmadala/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

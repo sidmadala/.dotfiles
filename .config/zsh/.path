@@ -4,7 +4,7 @@
 # export ZDOTDIR="$HOME/.config/zsh"
 
 # Preventing history files from being created
-export LESSHISTFILE=" "
+export LESSHISTFILE=""
 
 # Setting Homebrew path
 export PATH=/opt/homebrew/bin:$PATH
@@ -37,27 +37,27 @@ export AWS_SHARED_CREDENTIALS_FILE="$XDG_DATA_HOME/aws/shared-credentials"
 # export AWS_WEB_IDENTITY_TOKEN_FILE="$XDG_DATA_HOME/aws/token"
 
 # Setting GOPATH 
-export GOPATH="$XDG_CONFIG_HOME/go"
-export GOBIN="$GOPATH/bin"
-export PATH=$PATH:$GOBIN
+# export GOPATH="$XDG_CONFIG_HOME/go"
+# export GOBIN="$GOPATH/bin"
+# export PATH=$PATH:$GOBIN
 
 # Setting JAVA_HOME 
-export JAVA_HOME="/opt/homebrew/Cellar/openjdk/17.0.2/libexec/openjdk.jdk/Contents/Home"
+# export JAVA_HOME="/opt/homebrew/Cellar/openjdk/17.0.2/libexec/openjdk.jdk/Contents/Home"
 # export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # Setting rustup and cargo paths
-export RUSTUP_HOME="$XDG_CONFIG_HOME/rust/rustup"
-export CARGO_HOME="$XDG_CONFIG_HOME/rust/cargo"
-export CARGO_BIN="$CARGO_HOME/bin"
-export PATH=$PATH:$CARGO_BIN
+# export RUSTUP_HOME="$XDG_CONFIG_HOME/rust/rustup"
+# export CARGO_HOME="$XDG_CONFIG_HOME/rust/cargo"
+# export CARGO_BIN="$CARGO_HOME/bin"
+# export PATH=$PATH:$CARGO_BIN
 
 # Setting npm paths
-export FNM_DIR="$XDG_CACHE_HOME/fnm"
-export FNM_LOGLEVEL="info"
-export FNM_NODE_DIST_MIRROR="https://nodejs.org/dist"
-export FNM_ARCH="arm64"
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
-export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+# export FNM_DIR="$XDG_CACHE_HOME/fnm"
+# export FNM_LOGLEVEL="info"
+# export FNM_NODE_DIST_MIRROR="https://nodejs.org/dist"
+# export FNM_ARCH="arm64"
+# export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
+# export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 
 # Lazygit config path
 # export LAZYGIT_NEW_DIR_FILE="$XDG_CONFIG_HOME/lazygit"
