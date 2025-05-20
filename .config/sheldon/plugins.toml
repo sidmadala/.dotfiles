@@ -25,7 +25,6 @@ zsh-defer source "{{ file }}"
 
 [plugins]
 
-
 # Non-deferred plugins 
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"

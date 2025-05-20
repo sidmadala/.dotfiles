@@ -1,8 +1,5 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Getting system properties
 # zmodload zsh/zprof
-
 
 ############ zsh settings ############
 bindkey -v				# vi keybindings
@@ -38,19 +35,16 @@ export MANPAGER='nvim +Man!'
 export VISUAL=nvim
 export EDITOR=nvim
 
-# fnm source
-# if [ -x "/opt/homebrew/Cellar/fnm" ] && [ -z $TMUX ]; then
-#     OLDPATH="$PATH"
-#     eval "$(fnm env)"
-#     PATH="$OLDPATH:$FNM_MULTISHELL_PATH/bin"
-# fi
+# Homebrew autoremove
+export HOMEBREW_AUTOREMOVE=1
 
+# Load Terminal Tools
 
 # starship prompt
 eval "$(starship init zsh)"
 
 # sheldon source
-source <(sheldon source)
+eval "$(sheldon source)"
 
 # zoxide source
 eval "$(zoxide init zsh --cmd j)"
@@ -58,17 +52,11 @@ eval "$(zoxide init zsh --cmd j)"
 # navi completion
 eval "$(navi widget zsh)"
 
-# rtx plugin manager
-eval "$(rtx activate zsh)"
+# mise plugin manager
+eval "$(mise activate zsh)"
 
 # Removing duplicates from path
 typeset -aU path
 
 # profiling zsh
 # zprof
-
-# opam configuration
-[[ ! -r /Users/sidmadala/.opam/opam-init/init.zsh ]] || source /Users/sidmadala/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

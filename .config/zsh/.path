@@ -4,12 +4,12 @@
 # export ZDOTDIR="$HOME/.config/zsh"
 
 # Preventing history files from being created
-export LESSHISTFILE=""
+LESSHISTFILE=/dev/null
 
 # Setting Homebrew path
 export PATH=/opt/homebrew/bin:$PATH
 
-# Zsh completions for Homebrew
+# zsh completions for Homebrew
 if type brew &>/dev/null
 then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
@@ -29,12 +29,17 @@ export SHELDON_CONFIG_DIR="$XDG_CONFIG_HOME/sheldon"
 # Setting starship config path
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 
+# Lazygit config path
+# export LAZYGIT_NEW_DIR_FILE="$XDG_CONFIG_HOME/lazygit"
+
 # Setting AWS-cli config path
-export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
-export AWS_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
-export AWS_CLI_HISTORY_FILE="$XDG_DATA_HOME/aws/history"
-export AWS_SHARED_CREDENTIALS_FILE="$XDG_DATA_HOME/aws/shared-credentials"
+# export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
+# export AWS_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
+# export AWS_CLI_HISTORY_FILE="$XDG_DATA_HOME/aws/history"
+# export AWS_SHARED_CREDENTIALS_FILE="$XDG_DATA_HOME/aws/shared-credentials"
 # export AWS_WEB_IDENTITY_TOKEN_FILE="$XDG_DATA_HOME/aws/token"
+
+# Programming paths (handled by mise now)
 
 # Setting GOPATH 
 # export GOPATH="$XDG_CONFIG_HOME/go"
@@ -50,14 +55,3 @@ export AWS_SHARED_CREDENTIALS_FILE="$XDG_DATA_HOME/aws/shared-credentials"
 # export CARGO_HOME="$XDG_CONFIG_HOME/rust/cargo"
 # export CARGO_BIN="$CARGO_HOME/bin"
 # export PATH=$PATH:$CARGO_BIN
-
-# Setting npm paths
-# export FNM_DIR="$XDG_CACHE_HOME/fnm"
-# export FNM_LOGLEVEL="info"
-# export FNM_NODE_DIST_MIRROR="https://nodejs.org/dist"
-# export FNM_ARCH="arm64"
-# export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
-# export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
-
-# Lazygit config path
-# export LAZYGIT_NEW_DIR_FILE="$XDG_CONFIG_HOME/lazygit"

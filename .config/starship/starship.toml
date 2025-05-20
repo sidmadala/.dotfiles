@@ -8,6 +8,9 @@ show_always = true
 [aws]
 disabled = true
 
+[gcloud]
+disabled = true
+
 [conda]
 format = "[$symbol$environment](dimmed green) "
 disabled = false

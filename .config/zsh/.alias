@@ -1,24 +1,38 @@
 #!/bin/zsh
 # Aliases for common commands
 
-
 # Program substitutions 
 alias vim='nvim'
 alias lua='luajit'
-alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
-alias brewdeps='brew leaves | xargs brew deps --installed --for-each | sed "s/^.*:/$(tput setaf 4)&$(tput sgr0)/"'
+#alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
+alias brewdeps='brew deps --formula --for-each $(brew leaves) | sed "s/^.*:/$(tput setaf 4)&$(tput sgr0)/"'
 alias lg='lazygit'
-alias asdf='rtx'
+alias asdf='mise'
 
 # List commands 
 alias l='ls -alhG'
-alias ll='ls -lG'
+alias ll='ls -alG'
 alias lm='ls -alG | more'
 
-# Exa replacements
-alias e='exa -1alhB --icons'
-alias ee='exa -1l --icons'
-alias em='exa -1al | more'
+# Eza replacements
+alias e='eza -1alhB --icons'
+alias ee='eza -1l --icons'
+alias em='eza -1al | more'
+
+# VPN commands
+alias vpn-up='sudo openconnect --background --user=smadala2 vpn.illinois.edu'
+alias vpn-down='sudo kill -2 `pgrep openconnect`'
+
+# UIUC HAL Login
+alias hal='ssh -XY sidmadala@hal-login.ncsa.illinois.edu'
+alias hal2='ssh -XY sidmadala@hal-login2.ncsa.illinois.edu'
+alias haldata='ssh -XY sidmadala@hal-data.ncsa.illinois.edu'
+
+# Readable PATH
+readpath="echo ${PATH//:/\\n}"
+
+# youtube-dl audio download
+alias ydl='yt-dlp --extract-audio --audio-quality 0 --audio-format mp3'
 
 # Purge cache files
 cleanup () {
@@ -27,21 +41,9 @@ cleanup () {
     if [ -x "$(command -v pip)" ]; then
         rm -rf "$(pip cache dir)"
     fi
-    rm -rf $XDG_CONFIG_HOME/rust/cargo/registry
+    # rm -rf $XDG_CONFIG_HOME/rust/cargo/registry
     rm -rf $HOME/.gnupg
     rm -rf $HOME/.matplotlib
     rm $HOME/.vimspector.log
     # docker system prune -a
 }
-
-# VPN commands
-alias vpn-up='sudo openconnect --background --user=smadala2 vpn.illinois.edu'
-alias vpn-down='sudo kill -2 `pgrep openconnect`'
-
-# UIUC HAL Login
-alias hal='ssh -XY sidmadala@hal.ncsa.illinois.edu'
-alias hal2='ssh -XY sidmadala@hal-login2.ncsa.illinois.edu'
-alias haldata='ssh -XY sidmadala@hal-data.ncsa.illinois.edu'
-
-# Youtube-dl Audio download
-# alias ydl='youtube-dl --extract-audio --audio-quality 0 --audio-format mp3'
