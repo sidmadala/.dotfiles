@@ -8,6 +8,7 @@ alias lua='luajit'
 alias brewdeps='brew deps --formula --for-each $(brew leaves) | sed "s/^.*:/$(tput setaf 4)&$(tput sgr0)/"'
 alias lg='lazygit'
 alias asdf='mise'
+alias p='pixi'
 
 # List commands 
 alias l='ls -alhG'

@@ -41,6 +41,9 @@ export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 
 # Programming paths (handled by mise now)
 
+# Setting pixi bin path
+export PATH="$HOME/.pixi/bin:$PATH"
+
 # Setting GOPATH 
 # export GOPATH="$XDG_CONFIG_HOME/go"
 # export GOBIN="$GOPATH/bin"
